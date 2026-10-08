@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: tashkent-design-week
+    env: node
+    plan: starter
+    buildCommand: ""
+    startCommand: "node server.js"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_USER
+        value: admin
+      - key: ADMIN_PASSWORD
+        value: admin123
+      - key: STORAGE_DIR
+        value: /var/data
+    disk:
+      name: tdw-storage
+      mountPath: /var/data
+      sizeGB: 1

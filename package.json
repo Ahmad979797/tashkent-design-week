@@ -1,0 +1,7 @@
+{
+  "name":"tashkent-design-week-cms",
+  "version":"3.0.0",
+  "private":true,
+  "description":"Zero-dependency editable Tashkent Design Week landing page and CMS",
+  "scripts":{"start":"node server.js","dev":"node --watch server.js"}
+}

@@ -1,0 +1,363 @@
+{
+  "settings": {
+    "siteTitle": "TASHKENT DESIGN WEEK",
+    "siteDates": "24 — 28 СЕНТЯБРЯ 2025",
+    "primary": "#111111",
+    "accent": "#f2f0ea",
+    "background": "#f7f6f2",
+    "text": "#111111",
+    "font": "Inter, Arial, sans-serif",
+    "displayFont": "Arial, Helvetica, sans-serif",
+    "siteLogo": "",
+    "siteLogoAlt": "TASHKENT DESIGN WEEK",
+    "siteLogoWidth": 150,
+    "nav": [
+      {
+        "id": 1,
+        "label": "Программа",
+        "url": "#program",
+        "enabled": true
+      },
+      {
+        "id": 2,
+        "label": "Мероприятия",
+        "url": "#events",
+        "enabled": true
+      },
+      {
+        "id": 3,
+        "label": "Спикеры",
+        "url": "#speakers",
+        "enabled": true
+      },
+      {
+        "id": 4,
+        "label": "Проекты",
+        "url": "#projects",
+        "enabled": true
+      },
+      {
+        "id": 5,
+        "label": "Город",
+        "url": "#activations",
+        "enabled": true
+      },
+      {
+        "id": 6,
+        "label": "Карта",
+        "url": "#map",
+        "enabled": true
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": 1,
+      "type": "logos",
+      "title": "Логотипы",
+      "enabled": true,
+      "data": {
+        "eyebrow": "Организаторы · Партнёры · Медиа",
+        "logos": [
+          {
+            "name": "PREMIUM CONCEPT",
+            "image": "/uploads/c7baaaab9737bec34689.jpg",
+            "id": 1,
+            "enabled": true
+          },
+          {
+            "name": "TASHKENT CITY",
+            "image": "/uploads/ce83dad2a8804777cecc.jpg",
+            "id": 2,
+            "enabled": true
+          },
+          {
+            "name": "GROHE",
+            "image": "",
+            "id": 3,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "type": "hero",
+      "title": "Главный экран",
+      "enabled": true,
+      "data": {
+        "title": "TASHKENT DESIGN WEEK",
+        "subtitle": "Люди. Пространства. Идеи. Новая культура города.",
+        "dates": "24 — 28 СЕНТЯБРЯ 2025",
+        "image": "",
+        "button": "Зарегистрироваться",
+        "buttonLink": "#registration"
+      }
+    },
+    {
+      "id": 3,
+      "type": "program",
+      "title": "Программа недели",
+      "enabled": true,
+      "data": {
+        "title": "ПРОГРАММА НЕДЕЛИ ДИЗАЙНА",
+        "html": "<p>Лекции, выставки, дискуссии, городские проекты и специальные мероприятия на ключевых площадках Ташкента.</p><p><strong>Пять дней, десятки событий и одна общая тема — как дизайн меняет город.</strong></p>",
+        "linkText": "Смотреть полную программу →"
+      }
+    },
+    {
+      "id": 4,
+      "type": "events",
+      "title": "Ближайшие мероприятия",
+      "enabled": true,
+      "data": {
+        "title": "БЛИЖАЙШИЕ МЕРОПРИЯТИЯ"
+      }
+    },
+    {
+      "id": 5,
+      "type": "speakers",
+      "title": "Спикеры",
+      "enabled": true,
+      "data": {
+        "title": "СПИКЕРЫ"
+      }
+    },
+    {
+      "id": 6,
+      "type": "projects",
+      "title": "Специальные проекты",
+      "enabled": true,
+      "data": {
+        "title": "СПЕЦИАЛЬНЫЕ ПРОЕКТЫ"
+      }
+    },
+    {
+      "id": 7,
+      "type": "activations",
+      "title": "City Activations",
+      "enabled": true,
+      "data": {
+        "title": "CITY ACTIVATIONS"
+      }
+    },
+    {
+      "id": 8,
+      "type": "map",
+      "title": "Карта активностей",
+      "enabled": true,
+      "data": {
+        "title": "КАРТА АКТИВНОСТЕЙ",
+        "intro": "Ключевые площадки, выставки, лекции и городские активации Tashkent Design Week.",
+        "image": "",
+        "yandexUrl": "https://yandex.ru/map-widget/v1/?ll=69.2401%2C41.2995&z=12",
+        "mapHeight": 560
+      }
+    },
+    {
+      "id": 9,
+      "type": "registration",
+      "title": "Регистрация",
+      "enabled": true,
+      "data": {
+        "title": "ЗАРЕГИСТРИРУЙТЕСЬ НА TASHKENT DESIGN WEEK",
+        "description": "Присоединяйтесь к профессиональному сообществу, чтобы создавать более красивое городское будущее вместе.",
+        "button": "Зарегистрироваться"
+      }
+    },
+    {
+      "id": 10,
+      "type": "footer",
+      "title": "Footer",
+      "enabled": true,
+      "data": {
+        "copyright": "© Tashkent Design Week. Все права защищены.",
+        "instagram": "#",
+        "facebook": "#",
+        "youtube": "#",
+        "email": "hello@tashkentdesignweek.uz"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "image": "",
+      "title": "The Future of Cities",
+      "date": "24 СЕНТ",
+      "time": "18:00",
+      "location": "Tashkent City Mall",
+      "description": "Открывающая лекция о городах, пространстве и новой культуре.",
+      "link": "#",
+      "enabled": true
+    },
+    {
+      "id": 2,
+      "image": "",
+      "title": "Дизайн и общество",
+      "date": "25 СЕНТ",
+      "time": "19:00",
+      "location": "Центр современного искусства",
+      "description": "Дискуссия дизайнеров, архитекторов и исследователей.",
+      "link": "#",
+      "enabled": true
+    },
+    {
+      "id": 3,
+      "image": "",
+      "title": "Материалы будущего",
+      "date": "26 СЕНТ",
+      "time": "16:00",
+      "location": "Premium Concept Showroom",
+      "description": "Мастер-класс о материалах, технологиях и новых сценариях интерьера.",
+      "link": "#",
+      "enabled": true
+    }
+  ],
+  "speakers": [
+    {
+      "id": 1,
+      "image": "",
+      "name": "Карим Рашид",
+      "role": "Промышленный дизайнер",
+      "company": "Karim Rashid Inc.",
+      "country": "США",
+      "bio": "Международно известный дизайнер.",
+      "topic": "Дизайн будущего",
+      "link": "#",
+      "enabled": true
+    },
+    {
+      "id": 2,
+      "image": "",
+      "name": "Мария Порто",
+      "role": "Архитектор",
+      "company": "Studio Porto",
+      "country": "Италия",
+      "bio": "Архитектор и исследователь городской среды.",
+      "topic": "Город как система",
+      "link": "#",
+      "enabled": true
+    },
+    {
+      "id": 3,
+      "image": "",
+      "name": "Алишер Икрамов",
+      "role": "Основатель студии",
+      "company": "Local Design Studio",
+      "country": "Узбекистан",
+      "bio": "Работает на стыке предметного дизайна и культуры.",
+      "topic": "Новая идентичность",
+      "link": "#",
+      "enabled": true
+    },
+    {
+      "id": 4,
+      "image": "",
+      "name": "Сара Ланген",
+      "role": "Куратор и исследователь",
+      "company": "Independent",
+      "country": "Нидерланды",
+      "bio": "Исследует современные дизайн-практики.",
+      "topic": "Кураторство и общество",
+      "link": "#",
+      "enabled": true
+    },
+    {
+      "id": 5,
+      "image": "",
+      "name": "Дэниэл Бек",
+      "role": "Продуктовый директор",
+      "company": "Design Lab",
+      "country": "Германия",
+      "bio": "Развивает инновационные продукты и материалы.",
+      "topic": "Материалы будущего",
+      "link": "#",
+      "enabled": true
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "image": "",
+      "title": "Silk Reimagined",
+      "category": "Special project",
+      "description": "Современная интерпретация традиционного узбекского шёлка в инсталляции от международных дизайнеров.",
+      "participants": "Design Week artists",
+      "location": "Tashkent",
+      "link": "#",
+      "enabled": true
+    }
+  ],
+  "activations": [
+    {
+      "id": 1,
+      "image": "",
+      "title": "Город как галерея",
+      "date": "27 СЕНТ",
+      "time": "12:00",
+      "location": "Центр Ташкента",
+      "description": "Серия арт-объектов и инсталляций в ключевых точках города.",
+      "link": "#",
+      "enabled": true
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Tashkent City Mall",
+      "address": "Ташкент",
+      "type": "Выставка",
+      "description": "Открытие недели",
+      "x": 22,
+      "y": 31,
+      "link": "#",
+      "enabled": true
+    },
+    {
+      "id": 2,
+      "name": "Центр современного искусства",
+      "address": "Ташкент",
+      "type": "Специальный проект",
+      "description": "Дискуссии и выставки",
+      "x": 42,
+      "y": 45,
+      "link": "#",
+      "enabled": true
+    },
+    {
+      "id": 3,
+      "name": "Premium Concept Showroom",
+      "address": "Ул. Шота Руставели, 1",
+      "type": "Мероприятие",
+      "description": "Мастер-классы",
+      "x": 57,
+      "y": 57,
+      "link": "#",
+      "enabled": true
+    },
+    {
+      "id": 4,
+      "name": "Парк «Узбекистан»",
+      "address": "Ташкент",
+      "type": "City activation",
+      "description": "Городская активация",
+      "x": 73,
+      "y": 34,
+      "link": "#",
+      "enabled": true
+    },
+    {
+      "id": 5,
+      "name": "Музей искусств",
+      "address": "Ташкент",
+      "type": "Выставка",
+      "description": "Специальная экспозиция",
+      "x": 33,
+      "y": 70,
+      "link": "#",
+      "enabled": true
+    }
+  ],
+  "registrations": []
+}
