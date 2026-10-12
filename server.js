@@ -176,10 +176,11 @@ const defaults = {
   ],
   speakers: [
     { id: 1, image: '', name: 'Карим Рашид', role: 'Промышленный дизайнер', company: 'Karim Rashid Inc.', country: 'США', bio: 'Международно известный дизайнер.', topic: 'Дизайн будущего', link: '#', enabled: true },
-    { id: 2, image: '', name: 'Мария Порто', role: 'Архитектор', company: 'Studio Porto', country: 'Италия', bio: 'Архитектор и исследователь городской среды.', topic: 'Город как система', link: '#', enabled: true },
+    { id: 2, image: '/uploads/maria_sultanova.png', name: 'Мария Султанова', role: 'Архитектор-урбанист', company: 'Директор SAD Studio', country: 'Узбекистан', bio: 'Архитектор и исследователь городской среды.', topic: 'Город как система', link: '#', enabled: true },
     { id: 3, image: '', name: 'Алишер Икрамов', role: 'Основатель студии', company: 'Local Design Studio', country: 'Узбекистан', bio: 'Работает на стыке предметного дизайна и культуры.', topic: 'Новая идентичность', link: '#', enabled: true },
     { id: 4, image: '', name: 'Сара Ланген', role: 'Куратор и исследователь', company: 'Independent', country: 'Нидерланды', bio: 'Исследует современные дизайн-практики.', topic: 'Кураторство и общество', link: '#', enabled: true },
-    { id: 5, image: '', name: 'Дэниэл Бек', role: 'Продуктовый директор', company: 'Design Lab', country: 'Германия', bio: 'Развивает инновационные продукты и материалы.', topic: 'Материалы будущего', link: '#', enabled: true }
+    { id: 5, image: '', name: 'Дэниэл Бек', role: 'Продуктовый директор', company: 'Design Lab', country: 'Германия', bio: 'Развивает инновационные продукты и материалы.', topic: 'Материалы будущего', link: '#', enabled: true },
+    { id: 6, image: '/uploads/shukhrat_abdullaev.png', name: 'Шухрат Абдуллаев', role: 'Искусствовед', company: 'генеральный директор Masdar school', country: 'Узбекистан', bio: 'Искусствовед, исследователь и куратор образовательных проектов.', topic: 'Культура и искусство', link: '#', enabled: true }
   ],
   projects: [
     { id: 1, image: '', title: 'Silk Reimagined', category: 'Special project', description: 'Современная интерпретация традиционного узбекского шёлка в инсталляции от международных дизайнеров.', participants: 'Design Week artists', location: 'Tashkent', link: '#', enabled: true }
