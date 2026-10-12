@@ -16,39 +16,95 @@
         "id": 1,
         "label": "Программа",
         "url": "#program",
-        "enabled": true
+        "enabled": true,
+        "translations": {
+          "uz": {
+            "label": "Dastur"
+          },
+          "en": {
+            "label": "Program"
+          }
+        }
       },
       {
         "id": 2,
         "label": "Мероприятия",
         "url": "#events",
-        "enabled": true
+        "enabled": true,
+        "translations": {
+          "uz": {
+            "label": "Tadbirlar"
+          },
+          "en": {
+            "label": "Events"
+          }
+        }
       },
       {
         "id": 3,
         "label": "Спикеры",
         "url": "#speakers",
-        "enabled": true
+        "enabled": true,
+        "translations": {
+          "uz": {
+            "label": "Spikerlar"
+          },
+          "en": {
+            "label": "Speakers"
+          }
+        }
       },
       {
         "id": 4,
         "label": "Проекты",
         "url": "#projects",
-        "enabled": true
+        "enabled": true,
+        "translations": {
+          "uz": {
+            "label": "Loyihalar"
+          },
+          "en": {
+            "label": "Projects"
+          }
+        }
       },
       {
         "id": 5,
         "label": "Город",
         "url": "#activations",
-        "enabled": true
+        "enabled": true,
+        "translations": {
+          "uz": {
+            "label": "Shahar"
+          },
+          "en": {
+            "label": "City"
+          }
+        }
       },
       {
         "id": 6,
         "label": "Карта",
         "url": "#map",
-        "enabled": true
+        "enabled": true,
+        "translations": {
+          "uz": {
+            "label": "Xarita"
+          },
+          "en": {
+            "label": "Map"
+          }
+        }
       }
-    ]
+    ],
+    "translations": {
+      "uz": {
+        "siteDates": "2025-YIL 24 — 28-SENTABR"
+      },
+      "en": {
+        "siteDates": "SEPTEMBER 24 — 28, 2025"
+      }
+    }
   },
   "blocks": [
     {
@@ -77,7 +133,15 @@
             "id": 3,
             "enabled": true
           }
-        ]
+        ],
+        "translations": {
+          "uz": {
+            "eyebrow": "Tashkilotchilar · Hamkorlar · OAV"
+          },
+          "en": {
+            "eyebrow": "Organizers · Partners · Media"
+          }
+        }
       }
     },
     {
@@ -91,7 +155,19 @@
         "dates": "24 — 28 СЕНТЯБРЯ 2025",
         "image": "",
         "button": "Зарегистрироваться",
-        "buttonLink": "#registration"
+        "buttonLink": "#registration",
+        "translations": {
+          "uz": {
+            "subtitle": "Odamlar. Makonlar. G‘oyalar. Yangi shahar madaniyati.",
+            "dates": "2025-YIL 24 — 28-SENTABR",
+            "button": "Ro‘yxatdan o‘tish"
+          },
+          "en": {
+            "subtitle": "People. Spaces. Ideas. New Urban Culture.",
+            "dates": "SEPTEMBER 24 — 28, 2025",
+            "button": "Register"
+          }
+        }
       }
     },
     {
@@ -102,7 +178,19 @@
       "data": {
         "title": "ПРОГРАММА НЕДЕЛИ ДИЗАЙНА",
         "html": "<p>Лекции, выставки, дискуссии, городские проекты и специальные мероприятия на ключевых площадках Ташкента.</p><p><strong>Пять дней, десятки событий и одна общая тема — как дизайн меняет город.</strong></p>",
-        "linkText": "Смотреть полную программу →"
+        "linkText": "Смотреть полную программу →",
+        "translations": {
+          "uz": {
+            "title": "DIZAYN HAFTALIGI DASTURI",
+            "html": "<p>Toshkentning asosiy maydonlarida ma‘ruzalar, ko‘rgazmalar, munozaralar, shahar loyihalari va maxsus tadbirlar.</p><p><strong>Besh kun, o‘nlab tadbirlar va bitta umumiy mavzu — dizayn shaharni qanday o‘zgartiradi.</strong></p>",
+            "linkText": "To‘liq dasturni ko‘rish →"
+          },
+          "en": {
+            "title": "DESIGN WEEK PROGRAM",
+            "html": "<p>Lectures, exhibitions, panel discussions, urban projects, and special events across key venues in Tashkent.</p><p><strong>Five days, dozens of events, and one central theme — how design transforms the city.</strong></p>",
+            "linkText": "View full schedule →"
+          }
+        }
       }
     },
     {
@@ -111,7 +199,17 @@
       "title": "Ближайшие мероприятия",
       "enabled": true,
       "data": {
-        "title": "БЛИЖАЙШИЕ МЕРОПРИЯТИЯ"
+        "title": "БЛИЖАЙШИЕ МЕРОПРИЯТИЯ",
+        "translations": {
+          "uz": {
+            "title": "YAQIN KUNDAGI TADBIRLAR",
+            "linkText": "Barcha tadbirlar →"
+          },
+          "en": {
+            "title": "UPCOMING EVENTS",
+            "linkText": "All events →"
+          }
+        }
       }
     },
     {
@@ -120,7 +218,17 @@
       "title": "Спикеры",
       "enabled": true,
       "data": {
-        "title": "СПИКЕРЫ"
+        "title": "СПИКЕРЫ",
+        "translations": {
+          "uz": {
+            "title": "SPIKERLAR",
+            "linkText": "Barcha spikerlar →"
+          },
+          "en": {
+            "title": "SPEAKERS",
+            "linkText": "All speakers →"
+          }
+        }
       }
     },
     {
@@ -129,7 +237,15 @@
       "title": "Специальные проекты",
       "enabled": true,
       "data": {
-        "title": "СПЕЦИАЛЬНЫЕ ПРОЕКТЫ"
+        "title": "СПЕЦИАЛЬНЫЕ ПРОЕКТЫ",
+        "translations": {
+          "uz": {
+            "title": "MAXSUS LOYIHALAR"
+          },
+          "en": {
+            "title": "SPECIAL PROJECTS"
+          }
+        }
       }
     },
     {
@@ -138,7 +254,15 @@
       "title": "City Activations",
       "enabled": true,
       "data": {
-        "title": "CITY ACTIVATIONS"
+        "title": "CITY ACTIVATIONS",
+        "translations": {
+          "uz": {
+            "title": "SHAHAR FAOLLIKLARI"
+          },
+          "en": {
+            "title": "CITY ACTIVATIONS"
+          }
+        }
       }
     },
     {
@@ -151,7 +275,19 @@
         "intro": "Ключевые площадки, выставки, лекции и городские активации Tashkent Design Week.",
         "image": "",
         "yandexUrl": "https://yandex.ru/map-widget/v1/?ll=69.2401%2C41.2995&z=12",
-        "mapHeight": 560
+        "mapHeight": 560,
+        "translations": {
+          "uz": {
+            "title": "FAOLLIKLAR XARITASI",
+            "intro": "Tashkent Design Week ning asosiy maydonlari, ko‘rgazmalar, ma‘ruzalar va shahar faolliklari.",
+            "note": "Xarita Yandex Xaritalar asosida yaratilgan. Design Week ning barcha rasmiy belgilarini ko‘rsatish uchun admin-paneldagi havola maydoniga Yandex Konstruktor xaritasini kiriting."
+          },
+          "en": {
+            "title": "ACTIVITY MAP",
+            "intro": "Key venues, exhibitions, lectures, and urban activations of Tashkent Design Week.",
+            "note": "Map built with Yandex Maps. To display all custom Design Week markers, insert the map link from Yandex Map Constructor in the admin panel."
+          }
+        }
       }
     },
     {
@@ -162,7 +298,21 @@
       "data": {
         "title": "ЗАРЕГИСТРИРУЙТЕСЬ НА TASHKENT DESIGN WEEK",
         "description": "Присоединяйтесь к профессиональному сообществу, чтобы создавать более красивое городское будущее вместе.",
-        "button": "Зарегистрироваться"
+        "button": "Зарегистрироваться",
+        "translations": {
+          "uz": {
+            "title": "TASHKENT DESIGN WEEK GA RO‘YXATDAN O‘TING",
+            "description": "Birgalikda yanada go‘zal shahar kelajagini yaratish uchun professional hamjamiyatga qo‘shiling.",
+            "button": "Ro‘yxatdan o‘tish",
+            "consentText": "Shaxsiy ma‘lumotlarni qayta ishlashga roziman"
+          },
+          "en": {
+            "title": "REGISTER FOR TASHKENT DESIGN WEEK",
+            "description": "Join the professional community to co-create a more inspiring urban future together.",
+            "button": "Register",
+            "consentText": "I consent to the processing of personal data"
+          }
+        }
       }
     },
     {
@@ -175,7 +325,15 @@
         "instagram": "#",
         "facebook": "#",
         "youtube": "#",
-        "email": "hello@tashkentdesignweek.uz"
+        "email": "hello@tashkentdesignweek.uz",
+        "translations": {
+          "uz": {
+            "copyright": "© Tashkent Design Week. Barcha huquqlar himoyalangan."
+          },
+          "en": {
+            "copyright": "© Tashkent Design Week. All rights reserved."
+          }
+        }
       }
     }
   ],
@@ -189,7 +347,19 @@
       "location": "Tashkent City Mall",
       "description": "Открывающая лекция о городах, пространстве и новой культуре.",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "date": "24-SENT",
+          "location": "Tashkent City Mall",
+          "description": "Shaharlar, makon va yangi madaniyat haqida ochilish ma‘ruzasi."
+        },
+        "en": {
+          "date": "SEP 24",
+          "location": "Tashkent City Mall",
+          "description": "Opening keynote on cities, public spaces, and contemporary culture."
+        }
+      }
     },
     {
       "id": 2,
@@ -200,7 +370,21 @@
       "location": "Центр современного искусства",
       "description": "Дискуссия дизайнеров, архитекторов и исследователей.",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "title": "Dizayn va jamiyat",
+          "date": "25-SENT",
+          "location": "Zamonaviy san‘at markazi",
+          "description": "Dizaynerlar, me‘morlar va tadqiqotchilar munozarasi."
+        },
+        "en": {
+          "title": "Design and Society",
+          "date": "SEP 25",
+          "location": "Center for Contemporary Art",
+          "description": "Discussion panel with designers, architects, and researchers."
+        }
+      }
     },
     {
       "id": 3,
@@ -211,7 +395,21 @@
       "location": "Premium Concept Showroom",
       "description": "Мастер-класс о материалах, технологиях и новых сценариях интерьера.",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "title": "Kelajak materiallari",
+          "date": "26-SENT",
+          "location": "Premium Concept Showroom",
+          "description": "Materiallar, texnologiyalar va yangi interyer ssenariylari bo‘yicha master-klass."
+        },
+        "en": {
+          "title": "Materials of the Future",
+          "date": "SEP 26",
+          "location": "Premium Concept Showroom",
+          "description": "Masterclass on innovative materials, technologies, and new interior scenarios."
+        }
+      }
     }
   ],
   "speakers": [
@@ -225,7 +423,25 @@
       "bio": "Международно известный дизайнер.",
       "topic": "Дизайн будущего",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Karim Rashid",
+          "role": "Sanoat dizayneri",
+          "company": "Karim Rashid Inc.",
+          "country": "AQSH",
+          "bio": "Xalqaro miqyosda taniqli dizayner.",
+          "topic": "Kelajak dizayni"
+        },
+        "en": {
+          "name": "Karim Rashid",
+          "role": "Industrial Designer",
+          "company": "Karim Rashid Inc.",
+          "country": "USA",
+          "bio": "Internationally acclaimed designer.",
+          "topic": "Design of the Future"
+        }
+      }
     },
     {
       "id": 2,
@@ -237,7 +453,25 @@
       "bio": "Архитектор и исследователь городской среды.",
       "topic": "Город как система",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Mariya Sultanova",
+          "role": "Me‘mor-urbanist",
+          "company": "SAD Studio direktori",
+          "country": "O‘zbekiston",
+          "bio": "Shahar muhiti me‘mori va tadqiqotchisi.",
+          "topic": "Shahar — tizim sifatida"
+        },
+        "en": {
+          "name": "Maria Sultanova",
+          "role": "Architect & Urbanist",
+          "company": "Director at SAD Studio",
+          "country": "Uzbekistan",
+          "bio": "Architect and urban environment researcher.",
+          "topic": "The City as a System"
+        }
+      }
     },
     {
       "id": 3,
@@ -249,7 +483,25 @@
       "bio": "Работает на стыке предметного дизайна и культуры.",
       "topic": "Новая идентичность",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Alisher Ikromov",
+          "role": "Studiya asoschisi",
+          "company": "Local Design Studio",
+          "country": "O‘zbekiston",
+          "bio": "Predmet dizayni va madaniyat tutashuvida faoliyat yuritadi.",
+          "topic": "Yangi o‘zlik"
+        },
+        "en": {
+          "name": "Alisher Ikramov",
+          "role": "Studio Founder",
+          "company": "Local Design Studio",
+          "country": "Uzbekistan",
+          "bio": "Works at the intersection of product design and culture.",
+          "topic": "New Identity"
+        }
+      }
     },
     {
       "id": 4,
@@ -261,7 +513,25 @@
       "bio": "Исследует современные дизайн-практики.",
       "topic": "Кураторство и общество",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Sara Langen",
+          "role": "Kurator va tadqiqotchi",
+          "company": "Independent",
+          "country": "Niderlandiya",
+          "bio": "Zamonaviy dizayn amaliyotlarini tadqiq qiladi.",
+          "topic": "Kuratorlik va jamiyat"
+        },
+        "en": {
+          "name": "Sara Langen",
+          "role": "Curator & Researcher",
+          "company": "Independent",
+          "country": "Netherlands",
+          "bio": "Researches contemporary design practices.",
+          "topic": "Curating and Society"
+        }
+      }
     },
     {
       "id": 5,
@@ -273,7 +543,25 @@
       "bio": "Развивает инновационные продукты и материалы.",
       "topic": "Материалы будущего",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Deniel Bek",
+          "role": "Mahsulot direktori",
+          "company": "Design Lab",
+          "country": "Germaniya",
+          "bio": "Innovatsion mahsulotlar va materiallarni ishlab chiqadi.",
+          "topic": "Kelajak materiallari"
+        },
+        "en": {
+          "name": "Daniel Beck",
+          "role": "Product Director",
+          "company": "Design Lab",
+          "country": "Germany",
+          "bio": "Develops innovative products and materials.",
+          "topic": "Materials of the Future"
+        }
+      }
     },
     {
       "id": 6,
@@ -285,7 +573,25 @@
       "bio": "Искусствовед, исследователь и куратор образовательных проектов.",
       "topic": "Культура и искусство",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Shuhrat Abdullayev",
+          "role": "San‘atshunos",
+          "company": "Masdar school bosh direktori",
+          "country": "O‘zbekiston",
+          "bio": "San‘atshunos, ta‘lim loyihalari tadqiqotchisi va kuratori.",
+          "topic": "Madaniyat va san‘at"
+        },
+        "en": {
+          "name": "Shukhrat Abdullaev",
+          "role": "Art Historian",
+          "company": "CEO of Masdar school",
+          "country": "Uzbekistan",
+          "bio": "Art historian, researcher and curator of educational projects.",
+          "topic": "Culture and Art"
+        }
+      }
     }
   ],
   "projects": [
@@ -298,7 +604,23 @@
       "participants": "Design Week artists",
       "location": "Tashkent",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "title": "Silk Reimagined",
+          "category": "Maxsus loyiha",
+          "description": "Xalqaro dizaynerlar installyatsiyasida an‘anaviy o‘zbek ipak matosining zamonaviy talqini.",
+          "participants": "Design Week ijodkorlari",
+          "location": "Toshkent"
+        },
+        "en": {
+          "title": "Silk Reimagined",
+          "category": "Special Project",
+          "description": "Contemporary interpretation of traditional Uzbek silk through installations by international designers.",
+          "participants": "Design Week artists",
+          "location": "Tashkent"
+        }
+      }
     }
   ],
   "activations": [
@@ -311,7 +633,23 @@
       "location": "Центр Ташкента",
       "description": "Серия арт-объектов и инсталляций в ключевых точках города.",
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "title": "Shahar — galereya sifatida",
+          "date": "27-SENT",
+          "time": "12:00",
+          "location": "Toshkent markazi",
+          "description": "Shaharning asosiy nuqtalarida art-ob‘ektlar va installyatsiyalar seriyasi."
+        },
+        "en": {
+          "title": "City as a Gallery",
+          "date": "SEP 27",
+          "time": "12:00",
+          "location": "Tashkent City Center",
+          "description": "A series of public art objects and installations across key locations in the city."
+        }
+      }
     }
   ],
   "locations": [
@@ -324,7 +662,21 @@
       "x": 22,
       "y": 31,
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Tashkent City Mall",
+          "address": "Toshkent",
+          "type": "Ko‘rgazma",
+          "description": "Haftalik ochilishi"
+        },
+        "en": {
+          "name": "Tashkent City Mall",
+          "address": "Tashkent",
+          "type": "Exhibition",
+          "description": "Opening event"
+        }
+      }
     },
     {
       "id": 2,
@@ -335,7 +687,21 @@
       "x": 42,
       "y": 45,
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Zamonaviy san‘at markazi",
+          "address": "Toshkent",
+          "type": "Maxsus loyiha",
+          "description": "Munozaralar va ko‘rgazmalar"
+        },
+        "en": {
+          "name": "Center for Contemporary Art",
+          "address": "Tashkent",
+          "type": "Special Project",
+          "description": "Discussions and exhibitions"
+        }
+      }
     },
     {
       "id": 3,
@@ -346,7 +712,21 @@
       "x": 57,
       "y": 57,
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Premium Concept Showroom",
+          "address": "Shota Rustaveli ko‘chasi, 1",
+          "type": "Tadbir",
+          "description": "Master-klasslar"
+        },
+        "en": {
+          "name": "Premium Concept Showroom",
+          "address": "1 Shota Rustaveli St",
+          "type": "Event",
+          "description": "Masterclasses"
+        }
+      }
     },
     {
       "id": 4,
@@ -357,7 +737,21 @@
       "x": 73,
       "y": 34,
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "«O‘zbekiston» bog‘i",
+          "address": "Toshkent",
+          "type": "Shahar faolligi",
+          "description": "Shahar faolligi"
+        },
+        "en": {
+          "name": "Uzbekistan Park",
+          "address": "Tashkent",
+          "type": "City activation",
+          "description": "City activation"
+        }
+      }
     },
     {
       "id": 5,
@@ -368,7 +762,21 @@
       "x": 33,
       "y": 70,
       "link": "#",
-      "enabled": true
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "San‘at muzeyi",
+          "address": "Toshkent",
+          "type": "Ko‘rgazma",
+          "description": "Maxsus ekspozitsiya"
+        },
+        "en": {
+          "name": "State Museum of Arts",
+          "address": "Tashkent",
+          "type": "Exhibition",
+          "description": "Special exhibition"
+        }
+      }
     }
   ],
   "registrations": []
