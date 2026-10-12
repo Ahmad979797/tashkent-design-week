@@ -15,85 +15,13 @@ const PASS = process.env.ADMIN_PASSWORD || 'admin123';
 const sessions = new Set();
 
 const defaultNav = [
-  { id: 1, label: 'Программа', url: '#program', enabled: true, translations: { uz: { label: 'Dastur' }, en: { label: 'Program' } } },
-  { id: 2, label: 'Мероприятия', url: '#events', enabled: true, translations: { uz: { label: 'Tadbirlar' }, en: { label: 'Events' } } },
-  { id: 3, label: 'Спикеры', url: '#speakers', enabled: true, translations: { uz: { label: 'Spikerlar' }, en: { label: 'Speakers' } } },
-  { id: 4, label: 'Проекты', url: '#projects', enabled: true, translations: { uz: { label: 'Loyihalar' }, en: { label: 'Projects' } } },
-  { id: 5, label: 'Город', url: '#activations', enabled: true, translations: { uz: { label: 'Shahar' }, en: { label: 'City' } } },
-  { id: 6, label: 'Карта', url: '#map', enabled: true, translations: { uz: { label: 'Xarita' }, en: { label: 'Map' } } }
+  { id: 1, label: 'Программа', url: '#program', enabled: true },
+  { id: 2, label: 'Мероприятия', url: '#events', enabled: true },
+  { id: 3, label: 'Спикеры', url: '#speakers', enabled: true },
+  { id: 4, label: 'Проекты', url: '#projects', enabled: true },
+  { id: 5, label: 'Город', url: '#activations', enabled: true },
+  { id: 6, label: 'Карта', url: '#map', enabled: true }
 ];
-
-const i18n = {
-  ru: {
-    eventsLink: 'Все мероприятия →',
-    speakersLink: 'Все спикеры →',
-    projectsLink: 'Подробнее →',
-    regButton: 'Зарегистрироваться ↗',
-    regTitle: 'ЗАРЕГИСТРИРУЙТЕСЬ НА TASHKENT DESIGN WEEK',
-    regEyebrow: 'TASHKENT DESIGN WEEK',
-    firstName: 'Имя *',
-    lastName: 'Фамилия',
-    phone: 'Телефон *',
-    email: 'Email *',
-    company: 'Компания',
-    role: 'Должность',
-    interest: 'Интересующее направление',
-    interestOptions: ['Архитектура', 'Предметный дизайн', 'Интерьеры', 'Городская среда', 'Материалы и технологии'],
-    consent: 'Я согласен на обработку персональных данных',
-    successTitle: 'Спасибо!',
-    successMsg: 'Спасибо за регистрацию! Мы получили вашу заявку.',
-    errorTitle: 'Не удалось отправить форму',
-    errorMsg: 'Пожалуйста, заполните обязательные поля и подтвердите согласие.',
-    backHome: 'Вернуться на сайт',
-    mapNote: 'Карта построена на Яндекс Картах. Для отображения всех фирменных меток Design Week вставьте ссылку на карту из Яндекс Конструктора в админ-панели.'
-  },
-  uz: {
-    eventsLink: 'Barcha tadbirlar →',
-    speakersLink: 'Barcha spikerlar →',
-    projectsLink: 'Batafsil →',
-    regButton: "Ro'yxatdan o'tish ↗",
-    regTitle: "TASHKENT DESIGN WEEK GA RO'YXATDAN O'TING",
-    regEyebrow: 'TASHKENT DESIGN WEEK',
-    firstName: 'Ism *',
-    lastName: 'Familiya',
-    phone: 'Telefon *',
-    email: 'Email *',
-    company: 'Kompaniya',
-    role: 'Lavozim',
-    interest: "Qiziqqan yo'nalish",
-    interestOptions: ['Arxitektura', 'Predmet dizayni', 'Interyerlar', 'Shahar muhiti', 'Materiallar va texnologiyalar'],
-    consent: "Shaxsiy ma'lumotlarni qayta ishlashga roziman",
-    successTitle: 'Rahmat!',
-    successMsg: "Ro'yxatdan o'tganingiz uchun rahmat! Arizangiz qabul qilindi.",
-    errorTitle: 'Formani yuborib bo‘lmadi',
-    errorMsg: 'Iltimos, majburiy maydonlarni to‘ldiring va rozilikni tasdiqlang.',
-    backHome: 'Bosh sahifaga qaytish',
-    mapNote: 'Xarita Yandex Xaritalar asosida yaratilgan. Tashkent Design Week belgilarini ko‘rish uchun Yandex Konstruktor havolasini kiriting.'
-  },
-  en: {
-    eventsLink: 'All events →',
-    speakersLink: 'All speakers →',
-    projectsLink: 'Learn more →',
-    regButton: 'Register ↗',
-    regTitle: 'REGISTER FOR TASHKENT DESIGN WEEK',
-    regEyebrow: 'TASHKENT DESIGN WEEK',
-    firstName: 'First name *',
-    lastName: 'Last name',
-    phone: 'Phone *',
-    email: 'Email *',
-    company: 'Company',
-    role: 'Job title',
-    interest: 'Area of interest',
-    interestOptions: ['Architecture', 'Product design', 'Interiors', 'Urban environment', 'Materials and technologies'],
-    consent: 'I agree to the processing of personal data',
-    successTitle: 'Thank you!',
-    successMsg: 'Thank you for registering! We have received your application.',
-    errorTitle: 'Failed to submit form',
-    errorMsg: 'Please fill in required fields and confirm consent.',
-    backHome: 'Back to site',
-    mapNote: 'Map built with Yandex Maps. To display all custom markers, insert the map widget link in the admin panel.'
-  }
-};
 
 const defaults = {
   settings: {
@@ -108,11 +36,7 @@ const defaults = {
     text: '#111111',
     font: 'Inter, Arial, sans-serif',
     displayFont: 'Arial, Helvetica, sans-serif',
-    nav: defaultNav,
-    translations: {
-      uz: { siteDates: '2025-yil 24 — 28-SENTABR' },
-      en: { siteDates: 'SEPTEMBER 24 — 28, 2025' }
-    }
+    nav: defaultNav
   },
   blocks: [
     {
@@ -122,10 +46,6 @@ const defaults = {
       enabled: true,
       data: {
         eyebrow: 'Организаторы · Партнёры · Медиа',
-        translations: {
-          uz: { eyebrow: 'Tashkilotchilar · Hamkorlar · Media' },
-          en: { eyebrow: 'Organizers · Partners · Media' }
-        },
         logos: [
           { id: 1, name: 'PREMIUM CONCEPT', image: '', enabled: true },
           { id: 2, name: 'TASHKENT CITY', image: '', enabled: true },
@@ -147,19 +67,7 @@ const defaults = {
         dates: '24 — 28 СЕНТЯБРЯ 2025',
         image: '',
         button: 'Зарегистрироваться',
-        buttonLink: '#registration',
-        translations: {
-          uz: {
-            subtitle: 'Odamlar. Makonlar. G‘oyalar. Yangi shahar madaniyati.',
-            dates: '2025-yil 24 — 28-SENTABR',
-            button: "Ro'yxatdan o'tish"
-          },
-          en: {
-            subtitle: 'People. Spaces. Ideas. A new urban culture.',
-            dates: 'SEPTEMBER 24 — 28, 2025',
-            button: 'Register'
-          }
-        }
+        buttonLink: '#registration'
       }
     },
     {
@@ -171,19 +79,7 @@ const defaults = {
         title: 'ПРОГРАММА НЕДЕЛИ ДИЗАЙНА',
         html: '<p>Лекции, выставки, дискуссии, городские проекты и специальные мероприятия на ключевых площадках Ташкента.</p><p><strong>Пять дней, десятки событий и одна общая тема — как дизайн меняет город.</strong></p>',
         linkText: 'Смотреть полную программу →',
-        linkUrl: '#events',
-        translations: {
-          uz: {
-            title: 'DIZAYN HAFTALIGI DASTURI',
-            html: '<p>Toshkentning asosiy maydonlarida ma’ruzalar, ko‘rgazmalar, munozaralar va maxsus tadbirlar.</p><p><strong>Besh kun, o‘nlab voqealar va bitta umumiy mavzu — dizayn shaharni qanday o‘zgartiradi.</strong></p>',
-            linkText: 'To‘liq dasturni ko‘rish →'
-          },
-          en: {
-            title: 'DESIGN WEEK PROGRAM',
-            html: '<p>Lectures, exhibitions, discussions, urban projects and special events across key venues in Tashkent.</p><p><strong>Five days, dozens of events, and one central theme — how design transforms the city.</strong></p>',
-            linkText: 'View full schedule →'
-          }
-        }
+        linkUrl: '#events'
       }
     },
     {
@@ -194,11 +90,7 @@ const defaults = {
       data: {
         title: 'БЛИЖАЙШИЕ МЕРОПРИЯТИЯ',
         linkText: 'Все мероприятия →',
-        linkUrl: '#events',
-        translations: {
-          uz: { title: 'YAQIN KUNDAGI TADBIRLAR', linkText: 'Barcha tadbirlar →' },
-          en: { title: 'UPCOMING EVENTS', linkText: 'All events →' }
-        }
+        linkUrl: '#events'
       }
     },
     {
@@ -209,11 +101,7 @@ const defaults = {
       data: {
         title: 'СПИКЕРЫ',
         linkText: 'Все спикеры →',
-        linkUrl: '#speakers',
-        translations: {
-          uz: { title: 'SPIKERLAR', linkText: 'Barcha spikerlar →' },
-          en: { title: 'SPEAKERS', linkText: 'All speakers →' }
-        }
+        linkUrl: '#speakers'
       }
     },
     {
@@ -224,11 +112,7 @@ const defaults = {
       data: {
         title: 'СПЕЦИАЛЬНЫЕ ПРОЕКТЫ',
         linkText: '',
-        linkUrl: '#',
-        translations: {
-          uz: { title: 'MAXSUS LOYIHALAR' },
-          en: { title: 'SPECIAL PROJECTS' }
-        }
+        linkUrl: '#'
       }
     },
     {
@@ -239,11 +123,7 @@ const defaults = {
       data: {
         title: 'CITY ACTIVATIONS',
         linkText: '',
-        linkUrl: '#',
-        translations: {
-          uz: { title: 'SHAHAR FAOLLIKLARI' },
-          en: { title: 'CITY ACTIVATIONS' }
-        }
+        linkUrl: '#'
       }
     },
     {
@@ -257,19 +137,7 @@ const defaults = {
         image: '',
         yandexUrl: 'https://yandex.ru/map-widget/v1/?ll=69.2401%2C41.2995&z=12',
         mapHeight: 560,
-        note: 'Карта построена на Яндекс Картах. Для отображения всех фирменных меток Design Week вставьте ссылку на карту из Яндекс Конструктора в админ-панели.',
-        translations: {
-          uz: {
-            title: 'FAOLLIKLAR XARITASI',
-            intro: 'Tashkent Design Week ning asosiy maydonlari, ko‘rgazmalar, ma’ruzalar va shahar faolliklari.',
-            note: 'Xarita Yandex Xaritalar asosida yaratilgan.'
-          },
-          en: {
-            title: 'ACTIVITY MAP',
-            intro: 'Key venues, exhibitions, lectures and urban activations of Tashkent Design Week.',
-            note: 'Map built with Yandex Maps.'
-          }
-        }
+        note: 'Карта построена на Яндекс Картах. Для отображения всех фирменных меток Design Week вставьте ссылку на карту из Яндекс Конструктора в админ-панели.'
       }
     },
     {
@@ -282,21 +150,7 @@ const defaults = {
         title: 'ЗАРЕГИСТРИРУЙТЕСЬ НА TASHKENT DESIGN WEEK',
         description: 'Присоединяйтесь к профессиональному сообществу, чтобы создавать более красивое городское будущее вместе.',
         button: 'Зарегистрироваться',
-        consentText: 'Я согласен на обработку персональных данных',
-        translations: {
-          uz: {
-            title: "TASHKENT DESIGN WEEK GA RO'YXATDAN O'TING",
-            description: "Chiroyliroq shahar kelajagini birgalikda yaratish uchun professional hamjamiyatga qo'shiling.",
-            button: "Ro'yxatdan o'tish",
-            consentText: "Shaxsiy ma'lumotlarni qayta ishlashga roziman"
-          },
-          en: {
-            title: 'REGISTER FOR TASHKENT DESIGN WEEK',
-            description: 'Join the professional community to shape a more beautiful urban future together.',
-            button: 'Register',
-            consentText: 'I agree to the processing of personal data'
-          }
-        }
+        consentText: 'Я согласен на обработку персональных данных'
       }
     },
     {
@@ -311,47 +165,37 @@ const defaults = {
         instagram: '#',
         telegram: '#',
         facebook: '#',
-        youtube: '#',
-        translations: {
-          uz: { copyright: '© Tashkent Design Week. Barcha huquqlar himoyalangan.' },
-          en: { copyright: '© Tashkent Design Week. All rights reserved.' }
-        }
+        youtube: '#'
       }
     }
   ],
   events: [
-    { id: 1, image: '', title: 'The Future of Cities', date: '24 СЕНТ', time: '18:00', location: 'Tashkent City Mall', description: 'Открывающая лекция о городах, пространстве и новой культуре.', link: '#', enabled: true, translations: { uz: { date: '24-SENT', description: 'Shaharlar, makon va yangi madaniyat haqidagi ochilish ma’ruzasi.' }, en: { date: 'SEP 24', description: 'Opening lecture on cities, space, and emerging culture.' } } },
-    { id: 2, image: '', title: 'Дизайн и общество', date: '25 СЕНТ', time: '19:00', location: 'Центр современного искусства', description: 'Дискуссия дизайнеров, архитекторов и исследователей.', link: '#', enabled: true, translations: { uz: { title: 'Dizayn va jamiyat', date: '25-SENT', location: 'Zamonaviy san’at markazi', description: 'Dizaynerlar, me’morlar va tadqiqotchilar munozarasi.' }, en: { title: 'Design and Society', date: 'SEP 25', location: 'Center for Contemporary Art', description: 'Discussion with designers, architects, and researchers.' } } },
-    { id: 3, image: '', title: 'Материалы будущего', date: '26 СЕНТ', time: '16:00', location: 'Premium Concept Showroom', description: 'Мастер-класс о материалах, технологиях и новых сценариях интерьера.', link: '#', enabled: true, translations: { uz: { title: 'Kelajak materiallari', date: '26-SENT', description: 'Materiallar, texnologiyalar va yangi interyer ssenariylari bo‘yicha master-klass.' }, en: { title: 'Materials of the Future', date: 'SEP 26', description: 'Masterclass on advanced materials, tech, and interior scenarios.' } } }
+    { id: 1, image: '', title: 'The Future of Cities', date: '24 СЕНТ', time: '18:00', location: 'Tashkent City Mall', description: 'Открывающая лекция о городах, пространстве и новой культуре.', link: '#', enabled: true },
+    { id: 2, image: '', title: 'Дизайн и общество', date: '25 СЕНТ', time: '19:00', location: 'Центр современного искусства', description: 'Дискуссия дизайнеров, архитекторов и исследователей.', link: '#', enabled: true },
+    { id: 3, image: '', title: 'Материалы будущего', date: '26 СЕНТ', time: '16:00', location: 'Premium Concept Showroom', description: 'Мастер-класс о материалах, технологиях и новых сценариях интерьера.', link: '#', enabled: true }
   ],
   speakers: [
-    { id: 1, image: '', name: 'Карим Рашид', role: 'Промышленный дизайнер', company: 'Karim Rashid Inc.', country: 'США', bio: 'Международно известный дизайнер.', topic: 'Дизайн будущего', link: '#', enabled: true, translations: { uz: { role: 'Sanoat dizayneri', country: 'AQSH', topic: 'Kelajak dizayni' }, en: { role: 'Industrial Designer', country: 'USA', topic: 'Design of the Future' } } },
-    { id: 2, image: '', name: 'Мария Порто', role: 'Архитектор', company: 'Studio Porto', country: 'Италия', bio: 'Архитектор и исследователь городской среды.', topic: 'Город как система', link: '#', enabled: true, translations: { uz: { role: 'Me’mor', country: 'Italiya', topic: 'Shahar — tizim sifatida' }, en: { role: 'Architect', country: 'Italy', topic: 'The City as a System' } } },
-    { id: 3, image: '', name: 'Алишер Икрамов', role: 'Основатель студии', company: 'Local Design Studio', country: 'Узбекистан', bio: 'Работает на стыке предметного дизайна и культуры.', topic: 'Новая идентичность', link: '#', enabled: true, translations: { uz: { role: 'Studiya asoschisi', country: 'O‘zbekiston', topic: 'Yangi o‘zlik' }, en: { role: 'Studio Founder', country: 'Uzbekistan', topic: 'New Identity' } } },
-    { id: 4, image: '', name: 'Сара Ланген', role: 'Куратор и исследователь', company: 'Independent', country: 'Нидерланды', bio: 'Исследует современные дизайн-практики.', topic: 'Кураторство и общество', link: '#', enabled: true, translations: { uz: { role: 'Kurator va tadqiqotchi', country: 'Niderlandiya', topic: 'Kuratorlik va jamiyat' }, en: { role: 'Curator & Researcher', country: 'Netherlands', topic: 'Curating and Society' } } },
-    { id: 5, image: '', name: 'Дэниэл Бек', role: 'Продуктовый директор', company: 'Design Lab', country: 'Германия', bio: 'Развивает инновационные продукты и материалы.', topic: 'Материалы будущего', link: '#', enabled: true, translations: { uz: { role: 'Mahsulot direktori', country: 'Germaniya', topic: 'Kelajak materiallari' }, en: { role: 'Product Director', country: 'Germany', topic: 'Materials of the Future' } } }
+    { id: 1, image: '', name: 'Карим Рашид', role: 'Промышленный дизайнер', company: 'Karim Rashid Inc.', country: 'США', bio: 'Международно известный дизайнер.', topic: 'Дизайн будущего', link: '#', enabled: true },
+    { id: 2, image: '', name: 'Мария Порто', role: 'Архитектор', company: 'Studio Porto', country: 'Италия', bio: 'Архитектор и исследователь городской среды.', topic: 'Город как система', link: '#', enabled: true },
+    { id: 3, image: '', name: 'Алишер Икрамов', role: 'Основатель студии', company: 'Local Design Studio', country: 'Узбекистан', bio: 'Работает на стыке предметного дизайна и культуры.', topic: 'Новая идентичность', link: '#', enabled: true },
+    { id: 4, image: '', name: 'Сара Ланген', role: 'Куратор и исследователь', company: 'Independent', country: 'Нидерланды', bio: 'Исследует современные дизайн-практики.', topic: 'Кураторство и общество', link: '#', enabled: true },
+    { id: 5, image: '', name: 'Дэниэл Бек', role: 'Продуктовый директор', company: 'Design Lab', country: 'Германия', bio: 'Развивает инновационные продукты и материалы.', topic: 'Материалы будущего', link: '#', enabled: true }
   ],
   projects: [
-    { id: 1, image: '', title: 'Silk Reimagined', category: 'Special project', description: 'Современная интерпретация традиционного узбекского шёлка в инсталляции от международных дизайнеров.', participants: 'Design Week artists', location: 'Tashkent', link: '#', enabled: true, translations: { uz: { category: 'Maxsus loyiha', description: 'Xalqaro dizaynerlar installyatsiyasida an’anaviy o‘zbek ipak matosining zamonaviy talqini.', location: 'Toshkent' }, en: { category: 'Special Project', description: 'Contemporary interpretation of traditional Uzbek silk through international installations.', location: 'Tashkent' } } }
+    { id: 1, image: '', title: 'Silk Reimagined', category: 'Special project', description: 'Современная интерпретация традиционного узбекского шёлка в инсталляции от международных дизайнеров.', participants: 'Design Week artists', location: 'Tashkent', link: '#', enabled: true }
   ],
   activations: [
-    { id: 1, image: '', title: 'Город как галерея', date: '27 СЕНТ', time: '12:00', location: 'Центр Ташкента', description: 'Серия арт-объектов и инсталляций в ключевых точках города.', link: '#', enabled: true, translations: { uz: { title: 'Shahar — galereya sifatida', date: '27-SENT', location: 'Toshkent markazi', description: 'Shaharning asosiy nuqtalarida art-ob’ektlar va installyatsiyalar seriyasi.' }, en: { title: 'City as a Gallery', date: 'SEP 27', location: 'Tashkent City Center', description: 'A series of art objects and installations at key city locations.' } } }
+    { id: 1, image: '', title: 'Город как галерея', date: '27 СЕНТ', time: '12:00', location: 'Центр Ташкента', description: 'Серия арт-объектов и инсталляций в ключевых точках города.', link: '#', enabled: true }
   ],
   locations: [
-    { id: 1, name: 'Tashkent City Mall', address: 'Ташкент', type: 'Выставка', description: 'Открытие недели', x: 22, y: 31, link: '#', enabled: true, translations: { uz: { address: 'Toshkent', type: 'Ko‘rgazma', description: 'Haftalik ochilishi' }, en: { address: 'Tashkent', type: 'Exhibition', description: 'Opening event' } } },
-    { id: 2, name: 'Центр современного искусства', address: 'Ташкент', type: 'Специальный проект', description: 'Дискуссии и выставки', x: 42, y: 45, link: '#', enabled: true, translations: { uz: { name: 'Zamonaviy san’at markazi', address: 'Toshkent', type: 'Maxsus loyiha', description: 'Munozaralar va ko‘rgazmalar' }, en: { name: 'Center for Contemporary Art', address: 'Tashkent', type: 'Special Project', description: 'Discussions and exhibitions' } } },
-    { id: 3, name: 'Premium Concept Showroom', address: 'Ул. Шота Руставели, 1', type: 'Мероприятие', description: 'Мастер-классы', x: 57, y: 57, link: '#', enabled: true, translations: { uz: { address: 'Shota Rustaveli ko‘chasi, 1', type: 'Tadbir', description: 'Master-klasslar' }, en: { address: '1 Shota Rustaveli St', type: 'Event', description: 'Masterclasses' } } },
-    { id: 4, name: 'Парк «Узбекистан»', address: 'Ташкент', type: 'City activation', description: 'Городская активация', x: 73, y: 34, link: '#', enabled: true, translations: { uz: { name: '«O‘zbekiston» bog‘i', address: 'Toshkent', type: 'Shahar faolligi' }, en: { name: 'Uzbekistan Park', address: 'Tashkent', type: 'City activation' } } },
-    { id: 5, name: 'Музей искусств', address: 'Ташкент', type: 'Выставка', description: 'Специальная экспозиция', x: 33, y: 70, link: '#', enabled: true, translations: { uz: { name: 'San’at muzeyi', address: 'Toshkent', type: 'Ko‘rgazma' }, en: { name: 'State Museum of Arts', address: 'Tashkent', type: 'Exhibition' } } }
+    { id: 1, name: 'Tashkent City Mall', address: 'Ташкент', type: 'Выставка', description: 'Открытие недели', x: 22, y: 31, link: '#', enabled: true },
+    { id: 2, name: 'Центр современного искусства', address: 'Ташкент', type: 'Специальный проект', description: 'Дискуссии и выставки', x: 42, y: 45, link: '#', enabled: true },
+    { id: 3, name: 'Premium Concept Showroom', address: 'Ул. Шота Руставели, 1', type: 'Мероприятие', description: 'Мастер-классы', x: 57, y: 57, link: '#', enabled: true },
+    { id: 4, name: 'Парк «Узбекистан»', address: 'Ташкент', type: 'City activation', description: 'Городская активация', x: 73, y: 34, link: '#', enabled: true },
+    { id: 5, name: 'Музей искусств', address: 'Ташкент', type: 'Выставка', description: 'Специальная экспозиция', x: 33, y: 70, link: '#', enabled: true }
   ],
   registrations: []
 };
-
-function t(obj, key, lang = 'ru') {
-  if (!obj) return '';
-  if (lang === 'ru') return obj[key] || '';
-  return obj.translations?.[lang]?.[key] || obj[key + '_' + lang] || obj[key] || '';
-}
 
 function normalize(d) {
   d.settings = d.settings || {};
@@ -437,14 +281,6 @@ function cookies(req) {
   );
 }
 
-function getLang(req, parsedUrl) {
-  const ql = parsedUrl?.query?.lang;
-  if (['ru', 'uz', 'en'].includes(ql)) return ql;
-  const cl = cookies(req).tdw_lang;
-  if (['ru', 'uz', 'en'].includes(cl)) return cl;
-  return 'ru';
-}
-
 function isAuth(req) {
   return sessions.has(cookies(req).tdw_session);
 }
@@ -481,112 +317,63 @@ function body(req) {
   });
 }
 
-function layout(title, content, extra = '', lang = 'ru') {
+function layout(title, content, extra = '') {
   const s = db.settings || {};
   const cssVars = `--primary:${esc(s.primary || '#111111')};--accent:${esc(s.accent || '#f2f0ea')};--bg:${esc(s.background || '#f7f6f2')};--text:${esc(s.text || '#111111')};--font:${esc(s.font || 'Inter, Arial, sans-serif')};--display:${esc(s.displayFont || 'Arial, Helvetica, sans-serif')}`;
-  return `<!doctype html><html lang="${esc(lang)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>${extra}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"></head><body style="${cssVars}">${content}<script src="/site.js"></script></body></html>`;
+  return `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>${extra}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"></head><body style="${cssVars}">${content}<script src="/site.js"></script></body></html>`;
 }
 
-function publicPage(lang = 'ru') {
+function publicPage() {
   const s = db.settings;
-  const loc = i18n[lang] || i18n.ru;
   const visible = db.blocks.filter(b => b.enabled);
   const hasLogo = s.siteLogo && (s.siteLogo.startsWith('/uploads/') || s.siteLogo.startsWith('http://') || s.siteLogo.startsWith('https://'));
   const brand = hasLogo
     ? `<img src="${esc(s.siteLogo)}" alt="${esc(s.siteLogoAlt || s.siteTitle)}" style="max-width:${Math.max(70, Math.min(280, Number(s.siteLogoWidth) || 150))}px;max-height:48px;object-fit:contain">`
-    : `${esc(t(s, 'siteTitle', lang) || 'TASHKENT DESIGN WEEK')}`;
+    : `${esc(s.siteTitle || 'TASHKENT DESIGN WEEK')}`;
   const navItems = (s.nav && s.nav.length ? s.nav : defaultNav).filter(x => x.enabled !== false);
-  const navHtml = `<nav>${navItems.map(n => `<a href="${esc(n.url)}">${esc(t(n, 'label', lang))}</a>`).join('')}</nav>`;
-
-  const langSwitch = `
-    <div class="lang-switch">
-      <a href="?lang=ru" class="${lang === 'ru' ? 'active' : ''}">RU</a>
-      <a href="?lang=uz" class="${lang === 'uz' ? 'active' : ''}">UZ</a>
-      <a href="?lang=en" class="${lang === 'en' ? 'active' : ''}">EN</a>
-    </div>`;
+  const navHtml = `<nav>${navItems.map(n => `<a href="${esc(n.url)}">${esc(n.label)}</a>`).join('')}</nav>`;
 
   return layout(
-    t(s, 'siteTitle', lang) || 'TASHKENT DESIGN WEEK',
-    `<header class="topbar"><a class="brand" href="#top">${brand}</a>${navHtml}${langSwitch}<button class="menu" aria-label="Открыть меню">☰</button></header><main id="top">${visible.map(b => renderBlock(b, lang)).join('')}</main>`,
-    `<meta name="description" content="Tashkent Design Week — ${lang === 'uz' ? 'Odamlar, makonlar, g‘oyalar.' : lang === 'en' ? 'People, spaces, ideas.' : 'люди, пространства, идеи.'}">`,
-    lang
+    s.siteTitle,
+    `<header class="topbar"><a class="brand" href="#top">${brand}</a>${navHtml}<button class="menu" aria-label="Открыть меню">☰</button></header><main id="top">${visible.map(renderBlock).join('')}</main>`,
+    `<meta name="description" content="Tashkent Design Week — люди, пространства, идеи.">`
   );
 }
 
-function renderBlock(b, lang = 'ru') {
-  const d = b.data || {}, s = db.settings, loc = i18n[lang] || i18n.ru;
-
+function renderBlock(b) {
+  const d = b.data || {}, s = db.settings;
   if (b.type === 'logos') {
-    const eyebrow = t(d, 'eyebrow', lang);
-    return `<section class="logos section" id="logos">${eyebrow ? `<div class="eyebrow">${esc(eyebrow)}</div>` : ''}<div class="logo-row">${(d.logos || []).filter(l => l.enabled !== false).map(l => `<div class="logo-item">${l.image ? `<img src="${esc(l.image)}" alt="${esc(l.name || '')}">` : `<span>${esc(l.name)}</span>`}</div>`).join('')}</div></section>`;
+    return `<section class="logos section" id="logos">${d.eyebrow ? `<div class="eyebrow">${esc(d.eyebrow)}</div>` : ''}<div class="logo-row">${(d.logos || []).filter(l => l.enabled !== false).map(l => `<div class="logo-item">${l.image ? `<img src="${esc(l.image)}" alt="${esc(l.name || '')}">` : `<span>${esc(l.name)}</span>`}</div>`).join('')}</div></section>`;
   }
-
   if (b.type === 'hero') {
-    const dates = t(d, 'dates', lang);
-    const title = t(d, 'title', lang);
-    const subtitle = t(d, 'subtitle', lang);
-    const button = t(d, 'button', lang);
-    return `<section class="hero" id="hero"><div class="hero-copy">${dates ? `<div class="eyebrow">${esc(dates)}</div>` : ''}<h1>${esc(title)}</h1>${subtitle ? `<p>${esc(subtitle)}</p>` : ''}${button ? `<a class="button hero-cta" href="${esc(d.buttonLink || '#registration')}">${esc(button)} <span>↗</span></a>` : ''}</div><div class="hero-image ${d.image ? 'has-image' : ''}" ${d.image ? `style="background-image:url('${esc(d.image)}')"` : ''}>${!d.image ? '<div class="image-placeholder">ARCHITECTURE / CITY / DESIGN</div>' : ''}</div></section>`;
+    return `<section class="hero" id="hero"><div class="hero-copy">${d.dates ? `<div class="eyebrow">${esc(d.dates)}</div>` : ''}<h1>${esc(d.title || '')}</h1>${d.subtitle ? `<p>${esc(d.subtitle)}</p>` : ''}${d.button ? `<a class="button hero-cta" href="${esc(d.buttonLink || '#registration')}">${esc(d.button)} <span>↗</span></a>` : ''}</div><div class="hero-image ${d.image ? 'has-image' : ''}" ${d.image ? `style="background-image:url('${esc(d.image)}')"` : ''}>${!d.image ? '<div class="image-placeholder">ARCHITECTURE / CITY / DESIGN</div>' : ''}</div></section>`;
   }
-
   if (b.type === 'program') {
-    const title = t(d, 'title', lang) || b.title;
-    const htmlContent = t(d, 'html', lang);
-    const linkText = t(d, 'linkText', lang);
-    return `<section class="section program" id="program"><div class="section-head"><h2>${esc(title)}</h2></div><div class="program-grid"><div class="rich">${safeHtml(htmlContent)}</div>${linkText ? `<a class="text-link" href="${esc(d.linkUrl || '#events')}">${esc(linkText)}</a>` : ''}</div></section>`;
+    return `<section class="section program" id="program"><div class="section-head"><h2>${esc(d.title || b.title)}</h2></div><div class="program-grid"><div class="rich">${safeHtml(d.html)}</div>${d.linkText ? `<a class="text-link" href="${esc(d.linkUrl || '#events')}">${esc(d.linkText)}</a>` : ''}</div></section>`;
   }
-
   if (b.type === 'events') {
-    const title = t(d, 'title', lang) || b.title;
-    const linkText = t(d, 'linkText', lang) || loc.eventsLink;
-    return `<section class="section" id="events"><div class="section-head"><h2>${esc(title)}</h2>${linkText ? `<a href="${esc(d.linkUrl || '#events')}">${esc(linkText)}</a>` : ''}</div><div class="cards-slider">${db.events.filter(x => x.enabled).map(e => `<article class="event-card"><div class="media" ${e.image ? `style="background-image:url('${esc(e.image)}')"` : ''}>${!e.image ? '<span>EVENT / DESIGN / CITY</span>' : ''}</div><div class="meta">${esc(t(e, 'date', lang))} · ${esc(t(e, 'time', lang))}</div><h3>${esc(t(e, 'title', lang))}</h3><p>${esc(t(e, 'description', lang))}</p><small>${esc(t(e, 'location', lang))}</small></article>`).join('')}</div></section>`;
+    return `<section class="section" id="events"><div class="section-head"><h2>${esc(d.title || b.title)}</h2>${d.linkText ? `<a href="${esc(d.linkUrl || '#events')}">${esc(d.linkText)}</a>` : ''}</div><div class="cards-slider">${db.events.filter(x => x.enabled).map(e => `<article class="event-card"><div class="media" ${e.image ? `style="background-image:url('${esc(e.image)}')"` : ''}>${!e.image ? '<span>EVENT / DESIGN / CITY</span>' : ''}</div><div class="meta">${esc(e.date)} · ${esc(e.time)}</div><h3>${esc(e.title)}</h3><p>${esc(e.description)}</p><small>${esc(e.location)}</small></article>`).join('')}</div></section>`;
   }
-
   if (b.type === 'speakers') {
-    const title = t(d, 'title', lang) || b.title;
-    const linkText = t(d, 'linkText', lang) || loc.speakersLink;
-    return `<section class="section" id="speakers"><div class="section-head"><h2>${esc(title)}</h2>${linkText ? `<a href="${esc(d.linkUrl || '#speakers')}">${esc(linkText)}</a>` : ''}</div><div class="speaker-grid">${db.speakers.filter(x => x.enabled).map(sp => {
-      const spName = t(sp, 'name', lang);
-      const initials = (spName || '').split(' ').map(x => x[0]).join('').slice(0, 2);
-      return `<article class="speaker"><div class="portrait" ${sp.image ? `style="background-image:url('${esc(sp.image)}')"` : ''}>${!sp.image ? `<span>${esc(initials)}</span>` : ''}</div><h3>${esc(spName)}</h3><p>${esc(t(sp, 'role', lang))}</p><small>${esc(t(sp, 'company', lang))} · ${esc(t(sp, 'country', lang))}</small></article>`;
-    }).join('')}</div></section>`;
+    return `<section class="section" id="speakers"><div class="section-head"><h2>${esc(d.title || b.title)}</h2>${d.linkText ? `<a href="${esc(d.linkUrl || '#speakers')}">${esc(d.linkText)}</a>` : ''}</div><div class="speaker-grid">${db.speakers.filter(x => x.enabled).map(sp => `<article class="speaker"><div class="portrait" ${sp.image ? `style="background-image:url('${esc(sp.image)}')"` : ''}>${!sp.image ? `<span>${esc((sp.name || '').split(' ').map(x => x[0]).join('').slice(0, 2))}</span>` : ''}</div><h3>${esc(sp.name)}</h3><p>${esc(sp.role)}</p><small>${esc(sp.company)} · ${esc(sp.country)}</small></article>`).join('')}</div></section>`;
   }
-
   if (b.type === 'projects') {
     const list = db.projects.filter(x => x.enabled);
     if (!list.length) return '';
-    const title = t(d, 'title', lang) || b.title;
-    const linkText = t(d, 'linkText', lang);
-    return `<section class="section feature" id="projects"><div class="section-head"><h2>${esc(title)}</h2>${linkText ? `<a href="${esc(d.linkUrl || '#')}">${esc(linkText)}</a>` : ''}</div>${list.map((p, i) => `<div class="feature-card" style="${i > 0 ? 'margin-top:36px' : ''}"><div class="feature-image" ${p?.image ? `style="background-image:url('${esc(p.image)}')"` : ''}>${!p?.image ? '<span>SPECIAL PROJECT</span>' : ''}</div><div class="feature-copy"><div class="eyebrow">${esc(t(p, 'category', lang) || 'SPECIAL PROJECT')}</div><h3>${esc(t(p, 'title', lang))}</h3><p>${esc(t(p, 'description', lang))}</p>${p?.participants ? `<small>Участники: ${esc(t(p, 'participants', lang))}</small>` : ''}<a class="text-link" href="${esc(p?.link || '#')}">${esc(loc.projectsLink)}</a><div class="counter">${String(i + 1).padStart(2, '0')} / ${String(list.length).padStart(2, '0')} →</div></div></div>`).join('')}</section>`;
+    return `<section class="section feature" id="projects"><div class="section-head"><h2>${esc(d.title || b.title)}</h2>${d.linkText ? `<a href="${esc(d.linkUrl || '#')}">${esc(d.linkText)}</a>` : ''}</div>${list.map((p, i) => `<div class="feature-card" style="${i > 0 ? 'margin-top:36px' : ''}"><div class="feature-image" ${p?.image ? `style="background-image:url('${esc(p.image)}')"` : ''}>${!p?.image ? '<span>SPECIAL PROJECT</span>' : ''}</div><div class="feature-copy"><div class="eyebrow">${esc(p?.category || 'SPECIAL PROJECT')}</div><h3>${esc(p?.title || '')}</h3><p>${esc(p?.description || '')}</p>${p?.participants ? `<small>Участники: ${esc(p.participants)}</small>` : ''}<a class="text-link" href="${esc(p?.link || '#')}">Подробнее →</a><div class="counter">${String(i + 1).padStart(2, '0')} / ${String(list.length).padStart(2, '0')} →</div></div></div>`).join('')}</section>`;
   }
-
   if (b.type === 'activations') {
     const list = db.activations.filter(x => x.enabled);
     if (!list.length) return '';
-    const title = t(d, 'title', lang) || b.title;
-    const linkText = t(d, 'linkText', lang);
-    return `<section class="section feature" id="activations"><div class="section-head"><h2>${esc(title)}</h2>${linkText ? `<a href="${esc(d.linkUrl || '#')}">${esc(linkText)}</a>` : ''}</div>${list.map((a, i) => `<div class="feature-card reverse" style="${i > 0 ? 'margin-top:36px' : ''}"><div class="feature-image" ${a?.image ? `style="background-image:url('${esc(a.image)}')"` : ''}>${!a?.image ? '<span>CITY ACTIVATION</span>' : ''}</div><div class="feature-copy"><div class="eyebrow">${esc(t(a, 'date', lang))} · ${esc(t(a, 'time', lang))}</div><h3>${esc(t(a, 'title', lang))}</h3><p>${esc(t(a, 'description', lang))}</p><small>${esc(t(a, 'location', lang))}</small><div class="counter">${String(i + 1).padStart(2, '0')} / ${String(list.length).padStart(2, '0')} →</div></div></div>`).join('')}</section>`;
+    return `<section class="section feature" id="activations"><div class="section-head"><h2>${esc(d.title || b.title)}</h2>${d.linkText ? `<a href="${esc(d.linkUrl || '#')}">${esc(d.linkText)}</a>` : ''}</div>${list.map((a, i) => `<div class="feature-card reverse" style="${i > 0 ? 'margin-top:36px' : ''}"><div class="feature-image" ${a?.image ? `style="background-image:url('${esc(a.image)}')"` : ''}>${!a?.image ? '<span>CITY ACTIVATION</span>' : ''}</div><div class="feature-copy"><div class="eyebrow">${esc(a?.date || '')} · ${esc(a?.time || '')}</div><h3>${esc(a?.title || '')}</h3><p>${esc(a?.description || '')}</p><small>${esc(a?.location || '')}</small><div class="counter">${String(i + 1).padStart(2, '0')} / ${String(list.length).padStart(2, '0')} →</div></div></div>`).join('')}</section>`;
   }
-
   if (b.type === 'map') {
-    const title = t(d, 'title', lang) || b.title;
-    const intro = t(d, 'intro', lang);
-    const note = t(d, 'note', lang) || loc.mapNote;
-    return `<section class="section map-section" id="map"><div class="section-head"><div><h2>${esc(title)}</h2>${intro ? `<p>${esc(intro)}</p>` : ''}</div></div><div class="map-wrap"><div class="yandex-map"><iframe src="${esc(d.yandexUrl || 'https://yandex.ru/map-widget/v1/?ll=69.2401%2C41.2995&z=12')}" width="100%" height="${Number(d.mapHeight) || 560}" frameborder="0" allowfullscreen="true" loading="lazy" title="Яндекс Карта Tashkent Design Week"></iframe></div><div class="location-list">${db.locations.filter(x => x.enabled).map((l, i) => `<div class="location-item"><b>${i + 1}</b><div><strong>${esc(t(l, 'name', lang))}</strong><span>${esc(t(l, 'type', lang))} · ${esc(t(l, 'address', lang))}</span>${l.description ? `<em>${esc(t(l, 'description', lang))}</em>` : ''}</div></div>`).join('')}</div></div>${note ? `<p class="map-note">${esc(note)}</p>` : ''}</section>`;
+    return `<section class="section map-section" id="map"><div class="section-head"><div><h2>${esc(d.title || b.title)}</h2>${d.intro ? `<p>${esc(d.intro)}</p>` : ''}</div></div><div class="map-wrap"><div class="yandex-map"><iframe src="${esc(d.yandexUrl || 'https://yandex.ru/map-widget/v1/?ll=69.2401%2C41.2995&z=12')}" width="100%" height="${Number(d.mapHeight) || 560}" frameborder="0" allowfullscreen="true" loading="lazy" title="Яндекс Карта Tashkent Design Week"></iframe></div><div class="location-list">${db.locations.filter(x => x.enabled).map((l, i) => `<div class="location-item"><b>${i + 1}</b><div><strong>${esc(l.name)}</strong><span>${esc(l.type)} · ${esc(l.address)}</span>${l.description ? `<em>${esc(l.description)}</em>` : ''}</div></div>`).join('')}</div></div>${d.note ? `<p class="map-note">${esc(d.note)}</p>` : ''}</section>`;
   }
-
   if (b.type === 'registration') {
-    const eyebrow = t(d, 'eyebrow', lang) || loc.regEyebrow;
-    const title = t(d, 'title', lang) || loc.regTitle;
-    const description = t(d, 'description', lang);
-    const button = t(d, 'button', lang) || loc.regButton;
-    const consentText = t(d, 'consentText', lang) || loc.consent;
-
-    return `<section class="registration" id="registration"><div class="registration-inner"><div><div class="eyebrow">${esc(eyebrow)}</div><h2>${esc(title)}</h2><p>${esc(description)}</p></div><form action="/register" method="post" class="reg-form"><input name="first_name" placeholder="${esc(loc.firstName)}" required><input name="last_name" placeholder="${esc(loc.lastName)}"><input type="tel" name="phone" placeholder="${esc(loc.phone)}" required><input type="email" name="email" placeholder="${esc(loc.email)}" required><input name="company" placeholder="${esc(loc.company)}"><input name="role" placeholder="${esc(loc.role)}"><select name="interest"><option value="">${esc(loc.interest)}</option>${loc.interestOptions.map(opt => `<option>${esc(opt)}</option>`).join('')}</select><label class="consent"><input type="checkbox" name="consent" value="1" required> ${esc(consentText)}</label><button class="button light" type="submit">${esc(button)}</button></form></div></section>`;
+    return `<section class="registration" id="registration"><div class="registration-inner"><div><div class="eyebrow">${esc(d.eyebrow || 'TASHKENT DESIGN WEEK')}</div><h2>${esc(d.title || b.title)}</h2><p>${esc(d.description || '')}</p></div><form action="/register" method="post" class="reg-form"><input name="first_name" placeholder="Имя *" required><input name="last_name" placeholder="Фамилия"><input type="tel" name="phone" placeholder="Телефон *" required><input type="email" name="email" placeholder="Email *" required><input name="company" placeholder="Компания"><input name="role" placeholder="Должность"><select name="interest"><option value="">Интересующее направление</option><option>Архитектура</option><option>Предметный дизайн</option><option>Интерьеры</option><option>Городская среда</option><option>Материалы и технологии</option></select><label class="consent"><input type="checkbox" name="consent" value="1" required> ${esc(d.consentText || 'Я согласен на обработку персональных данных')}</label><button class="button light" type="submit">${esc(d.button || 'Зарегистрироваться')} ↗</button></form></div></section>`;
   }
-
   if (b.type === 'footer') {
-    const copyright = t(d, 'copyright', lang);
     const links = [];
     if (d.instagram) links.push(`<a href="${esc(d.instagram)}" target="_blank" rel="noopener">Instagram</a>`);
     if (d.telegram) links.push(`<a href="${esc(d.telegram)}" target="_blank" rel="noopener">Telegram</a>`);
@@ -594,21 +381,17 @@ function renderBlock(b, lang = 'ru') {
     if (d.youtube) links.push(`<a href="${esc(d.youtube)}" target="_blank" rel="noopener">YouTube</a>`);
     if (d.phone) links.push(`<a href="tel:${esc(d.phone)}">${esc(d.phone)}</a>`);
     if (d.email) links.push(`<a href="mailto:${esc(d.email)}">${esc(d.email)}</a>`);
-    return `<footer class="footer"><div><b>${esc(t(s, 'siteTitle', lang) || 'TASHKENT DESIGN WEEK')}</b><p>${esc(copyright)}</p></div><div class="footer-links">${links.join('')}</div></footer>`;
+    return `<footer class="footer"><div><b>${esc(s.siteTitle)}</b><p>${esc(d.copyright || '')}</p></div><div class="footer-links">${links.join('')}</div></footer>`;
   }
-
   if (b.type === 'text') {
-    return `<section class="section generic" id="text-${b.id}"><div class="section-head"><h2>${esc(t(d, 'title', lang) || b.title)}</h2></div><div class="rich">${safeHtml(t(d, 'html', lang))}</div></section>`;
+    return `<section class="section generic" id="text-${b.id}"><div class="section-head"><h2>${esc(d.title || b.title)}</h2></div><div class="rich">${safeHtml(d.html)}</div></section>`;
   }
-
   if (b.type === 'image') {
-    return `<section class="section generic" id="image-${b.id}">${d.image ? `<img class="full-image" src="${esc(d.image)}" alt="${esc(t(d, 'caption', lang) || '')}">` : ''}${d.caption ? `<p class="caption">${esc(t(d, 'caption', lang))}</p>` : ''}</section>`;
+    return `<section class="section generic" id="image-${b.id}">${d.image ? `<img class="full-image" src="${esc(d.image)}" alt="${esc(d.caption || '')}">` : ''}${d.caption ? `<p class="caption">${esc(d.caption)}</p>` : ''}</section>`;
   }
-
   if (b.type === 'cta') {
-    return `<section class="section cta" id="cta-${b.id}"><h2>${esc(t(d, 'title', lang) || b.title)}</h2><p>${esc(t(d, 'description', lang))}</p><a class="button" href="${esc(d.link || '#')}">${esc(t(d, 'button', lang) || 'Подробнее')} ↗</a></section>`;
+    return `<section class="section cta" id="cta-${b.id}"><h2>${esc(d.title || b.title)}</h2><p>${esc(d.description || '')}</p><a class="button" href="${esc(d.link || '#')}">${esc(d.button || 'Подробнее')} ↗</a></section>`;
   }
-
   return '';
 }
 
@@ -665,87 +448,79 @@ const fieldMap = {
   ]
 };
 
-function fieldHtml(k, label, val = '', ruVal = '', lang = 'ru') {
+function fieldHtml(k, label, val = '') {
   const isImg = k === 'image' || k === 'siteLogo' || k.endsWith('image') || k.endsWith('Image') || k.endsWith('Logo');
-  const badge = lang !== 'ru' ? ` <span class="lang-tag">${lang.toUpperCase()}</span>` : '';
-  const ph = (lang !== 'ru' && ruVal) ? ` placeholder="RU: ${esc(ruVal)}"` : '';
-
   if (isImg) {
     const preview = val ? `<img class="upload-preview" src="${esc(val)}" alt="Превью" onerror="this.style.display='none'">` : '';
-    return `<label class="wide">${esc(label)}${badge}<div class="image-field"><input class="image-url" name="${k}" value="${esc(val)}"><input type="file" accept="image/*" onchange="uploadImage(this)">${preview}<small>Выбери файл с компьютера (до 6 МБ) или укажи URL. Затем нажми «Сохранить».</small></div></label>`;
+    return `<label class="wide">${esc(label)}<div class="image-field"><input class="image-url" name="${k}" value="${esc(val)}"><input type="file" accept="image/*" onchange="uploadImage(this)">${preview}<small>Выбери файл с компьютера (до 6 МБ) или укажи URL. Затем нажми «Сохранить».</small></div></label>`;
   }
   const isTextarea = ['description', 'bio', 'html', 'intro', 'note'].includes(k) || k.endsWith('description') || k.endsWith('bio') || k.endsWith('html') || k.endsWith('intro') || k.endsWith('note');
-  return `<label class="${isTextarea ? 'wide' : ''}">${esc(label)}${badge}${isTextarea ? `<textarea name="${k}" rows="3"${ph}>${esc(val)}</textarea>` : `<input name="${k}" value="${esc(val)}"${ph}>`}</label>`;
+  return `<label class="${isTextarea ? 'wide' : ''}">${esc(label)}${isTextarea ? `<textarea name="${k}" rows="3">${esc(val)}</textarea>` : `<input name="${k}" value="${esc(val)}">`}</label>`;
 }
 
-function blockFieldsHtml(b, lang = 'ru') {
+function blockFieldsHtml(b) {
   const d = b.data || {};
-  const tr = d.translations?.[lang] || {};
-  const v = (key) => lang === 'ru' ? (d[key] || '') : (tr[key] || '');
-  const r = (key) => d[key] || '';
-  const f = (k, label) => fieldHtml(k, label, v(k.slice(2)), r(k.slice(2)), lang);
-
   if (b.type === 'hero') {
     return `<div class="block-fields">
-      ${f('d_title', 'Заголовок H1')}
-      ${f('d_subtitle', 'Подзаголовок / Слоган')}
-      ${f('d_dates', 'Даты / Eyebrow')}
-      ${f('d_button', 'Текст кнопки CTA')}
-      ${f('d_buttonLink', 'Ссылка кнопки CTA')}
-      <div class="full">${fieldHtml('d_image', 'Фоновое изображение правой части (баннер)', d.image || '', '', 'ru')}</div>
+      <label>Заголовок H1<input name="d_title" value="${esc(d.title || '')}"></label>
+      <label>Подзаголовок / Слоган<input name="d_subtitle" value="${esc(d.subtitle || '')}"></label>
+      <label>Даты / Eyebrow<input name="d_dates" value="${esc(d.dates || '')}"></label>
+      <label>Текст кнопки CTA<input name="d_button" value="${esc(d.button || '')}"></label>
+      <label>Ссылка кнопки CTA<input name="d_buttonLink" value="${esc(d.buttonLink || '#registration')}"></label>
+      <div class="full">${fieldHtml('d_image', 'Фоновое изображение правой части (баннер)', d.image || '')}</div>
     </div>`;
   }
   if (b.type === 'logos') {
     return `<div class="block-fields">
-      <div class="full">${f('d_eyebrow', 'Подпись над логотипами (Eyebrow)')}</div>
+      <label class="full">Подпись над логотипами (Eyebrow)<input name="d_eyebrow" value="${esc(d.eyebrow || '')}"></label>
       <div class="full field-hint">
-        <p>💡 В блоке сейчас <strong>${(d.logos || []).length}</strong> логотипов. Управлять логотипами брендов можно в разделе <a href="#logos"><strong>«Логотипы в верхнем блоке»</strong></a> ниже.</p>
+        <p>💡 В блоке сейчас <strong>${(d.logos || []).length}</strong> логотипов. Вы можете добавлять, удалять, сортировать и менять изображения логотипов в разделе <a href="#logos"><strong>«Логотипы в верхнем блоке»</strong></a> ниже.</p>
       </div>
     </div>`;
   }
   if (b.type === 'program') {
     return `<div class="block-fields">
-      <div class="full">${f('d_title', 'Заголовок блока')}</div>
-      <div class="full">${f('d_html', 'Текст / Описание программы (поддерживает HTML / абзацы)')}</div>
-      ${f('d_linkText', 'Текст ссылки')}
-      ${f('d_linkUrl', 'Ссылка (URL или якорь #)')}
+      <label class="full">Заголовок блока<input name="d_title" value="${esc(d.title || '')}"></label>
+      <label class="full">Текст / Описание программы (поддерживает HTML / абзацы)<textarea name="d_html" rows="5">${esc(d.html || '')}</textarea></label>
+      <label>Текст ссылки<input name="d_linkText" value="${esc(d.linkText || 'Смотреть полную программу →')}"></label>
+      <label>Ссылка (URL или якорь #)<input name="d_linkUrl" value="${esc(d.linkUrl || '#events')}"></label>
     </div>`;
   }
   if (b.type === 'events') {
     return `<div class="block-fields">
-      ${f('d_title', 'Заголовок блока')}
-      ${f('d_linkText', 'Текст верхней ссылки')}
-      <div class="full">${f('d_linkUrl', 'Ссылка (URL или якорь #)')}</div>
+      <label>Заголовок блока<input name="d_title" value="${esc(d.title || '')}"></label>
+      <label>Текст верхней ссылки<input name="d_linkText" value="${esc(d.linkText || 'Все мероприятия →')}"></label>
+      <label class="full">Ссылка (URL или якорь #)<input name="d_linkUrl" value="${esc(d.linkUrl || '#events')}"></label>
       <div class="full field-hint">
-        <p>💡 Карточки мероприятий (${db.events.length} шт.) настраиваются в разделе <a href="#events"><strong>«Мероприятия»</strong></a> ниже.</p>
+        <p>💡 Карточки мероприятий (${db.events.length} шт.) настраиваются, добавляются и редактируются в разделе <a href="#events"><strong>«Мероприятия»</strong></a> ниже.</p>
       </div>
     </div>`;
   }
   if (b.type === 'speakers') {
     return `<div class="block-fields">
-      ${f('d_title', 'Заголовок блока')}
-      ${f('d_linkText', 'Текст верхней ссылки')}
-      <div class="full">${f('d_linkUrl', 'Ссылка (URL или якорь #)')}</div>
+      <label>Заголовок блока<input name="d_title" value="${esc(d.title || '')}"></label>
+      <label>Текст верхней ссылки<input name="d_linkText" value="${esc(d.linkText || 'Все спикеры →')}"></label>
+      <label class="full">Ссылка (URL или якорь #)<input name="d_linkUrl" value="${esc(d.linkUrl || '#speakers')}"></label>
       <div class="full field-hint">
-        <p>💡 Спикеры (${db.speakers.length} чел.) настраиваются в разделе <a href="#speakers"><strong>«Спикеры»</strong></a> ниже.</p>
+        <p>💡 Спикеры (${db.speakers.length} чел.) с фотографиями, компаниями и темами настраиваются в разделе <a href="#speakers"><strong>«Спикеры»</strong></a> ниже.</p>
       </div>
     </div>`;
   }
   if (b.type === 'projects') {
     return `<div class="block-fields">
-      ${f('d_title', 'Заголовок блока')}
-      ${f('d_linkText', 'Текст ссылки в шапке (опционально)')}
-      <div class="full">${f('d_linkUrl', 'URL ссылки')}</div>
+      <label>Заголовок блока<input name="d_title" value="${esc(d.title || '')}"></label>
+      <label>Текст ссылки в шапке (опционально)<input name="d_linkText" value="${esc(d.linkText || '')}"></label>
+      <label class="full">URL ссылки<input name="d_linkUrl" value="${esc(d.linkUrl || '#')}"></label>
       <div class="full field-hint">
-        <p>💡 Проекты (${db.projects.length} шт.) настраиваются в разделе <a href="#projects"><strong>«Специальные проекты»</strong></a> ниже.</p>
+        <p>💡 Проекты (${db.projects.length} шт.) с фото и описаниями настраиваются в разделе <a href="#projects"><strong>«Специальные проекты»</strong></a> ниже.</p>
       </div>
     </div>`;
   }
   if (b.type === 'activations') {
     return `<div class="block-fields">
-      ${f('d_title', 'Заголовок блока')}
-      ${f('d_linkText', 'Текст ссылки в шапке (опционально)')}
-      <div class="full">${f('d_linkUrl', 'URL ссылки')}</div>
+      <label>Заголовок блока<input name="d_title" value="${esc(d.title || '')}"></label>
+      <label>Текст ссылки в шапке (опционально)<input name="d_linkText" value="${esc(d.linkText || '')}"></label>
+      <label class="full">URL ссылки<input name="d_linkUrl" value="${esc(d.linkUrl || '#')}"></label>
       <div class="full field-hint">
         <p>💡 Активации (${db.activations.length} шт.) настраиваются в разделе <a href="#activations"><strong>«City Activations»</strong></a> ниже.</p>
       </div>
@@ -753,31 +528,31 @@ function blockFieldsHtml(b, lang = 'ru') {
   }
   if (b.type === 'map') {
     return `<div class="block-fields">
-      ${f('d_title', 'Заголовок блока')}
+      <label>Заголовок блока<input name="d_title" value="${esc(d.title || '')}"></label>
       <label>Высота карты (px)<input type="number" name="d_mapHeight" min="300" max="1000" value="${Number(d.mapHeight) || 560}"></label>
-      <div class="full">${f('d_intro', 'Вводный текст над картой')}</div>
+      <label class="full">Вводный текст над картой<textarea name="d_intro" rows="2">${esc(d.intro || '')}</textarea></label>
       <label class="full">Яндекс Карта — ссылка embed / widget URL<input name="d_yandexUrl" value="${esc(d.yandexUrl || 'https://yandex.ru/map-widget/v1/?ll=69.2401%2C41.2995&z=12')}"></label>
-      <div class="full">${f('d_note', 'Текст примечания под картой')}</div>
+      <label class="full">Текст примечания под картой<textarea name="d_note" rows="2">${esc(d.note || 'Карта построена на Яндекс Картах. Для отображения всех фирменных меток Design Week вставьте ссылку на карту из Яндекс Конструктора в админ-панели.')}</textarea></label>
       <div class="full field-hint">
-        <p>💡 Точки и адреса (${db.locations.length} локаций) настраиваются в разделе <a href="#locations"><strong>«Локации карты»</strong></a> ниже.</p>
+        <p>💡 Точки и адреса в списке справа (${db.locations.length} локаций) настраиваются в разделе <a href="#locations"><strong>«Локации карты»</strong></a> ниже.</p>
       </div>
     </div>`;
   }
   if (b.type === 'registration') {
     return `<div class="block-fields">
-      ${f('d_eyebrow', 'Подпись (Eyebrow)')}
-      ${f('d_title', 'Заголовок формы')}
-      <div class="full">${f('d_description', 'Описание формы')}</div>
-      ${f('d_button', 'Текст кнопки отправки')}
-      ${f('d_consentText', 'Текст согласия с условиями')}
+      <label>Подпись (Eyebrow)<input name="d_eyebrow" value="${esc(d.eyebrow || 'TASHKENT DESIGN WEEK')}"></label>
+      <label>Заголовок формы<input name="d_title" value="${esc(d.title || '')}"></label>
+      <label class="full">Описание формы<textarea name="d_description" rows="3">${esc(d.description || '')}</textarea></label>
+      <label>Текст кнопки отправки<input name="d_button" value="${esc(d.button || 'Зарегистрироваться')}"></label>
+      <label>Текст согласия с условиями<input name="d_consentText" value="${esc(d.consentText || 'Я согласен на обработку персональных данных')}"></label>
       <div class="full field-hint">
-        <p>💡 Входящие заявки (${db.registrations.length} шт.) хранятся в разделе <a href="#registrations"><strong>«Регистрации»</strong></a> ниже.</p>
+        <p>💡 Все входящие заявки (${db.registrations.length} шт.) хранятся в разделе <a href="#registrations"><strong>«Регистрации»</strong></a> ниже с возможностью экспорта в CSV.</p>
       </div>
     </div>`;
   }
   if (b.type === 'footer') {
     return `<div class="block-fields">
-      <div class="full">${f('d_copyright', 'Текст копирайта')}</div>
+      <label class="full">Текст копирайта<input name="d_copyright" value="${esc(d.copyright || '')}"></label>
       <label>Email<input type="email" name="d_email" value="${esc(d.email || '')}"></label>
       <label>Телефон<input type="tel" name="d_phone" value="${esc(d.phone || '')}"></label>
       <label>Instagram URL<input name="d_instagram" value="${esc(d.instagram || '#')}"></label>
@@ -788,71 +563,58 @@ function blockFieldsHtml(b, lang = 'ru') {
   }
   if (b.type === 'text') {
     return `<div class="block-fields">
-      <div class="full">${f('d_title', 'Заголовок блока')}</div>
-      <div class="full">${f('d_html', 'Текст / HTML содержимое')}</div>
+      <label class="full">Заголовок блока<input name="d_title" value="${esc(d.title || '')}"></label>
+      <label class="full">Текст / HTML содержимое<textarea name="d_html" rows="6">${esc(d.html || '')}</textarea></label>
     </div>`;
   }
   if (b.type === 'image') {
     return `<div class="block-fields">
-      <div class="full">${fieldHtml('d_image', 'Изображение', d.image || '', '', 'ru')}</div>
-      <div class="full">${f('d_caption', 'Подпись под изображением')}</div>
+      <div class="full">${fieldHtml('d_image', 'Изображение', d.image || '')}</div>
+      <label class="full">Подпись под изображением<input name="d_caption" value="${esc(d.caption || '')}"></label>
     </div>`;
   }
   if (b.type === 'cta') {
     return `<div class="block-fields">
-      ${f('d_title', 'Заголовок')}
-      ${f('d_button', 'Текст кнопки')}
-      <div class="full">${f('d_description', 'Описание')}</div>
+      <label>Заголовок<input name="d_title" value="${esc(d.title || '')}"></label>
+      <label>Текст кнопки<input name="d_button" value="${esc(d.button || 'Подробнее')}"></label>
+      <label class="full">Описание<textarea name="d_description" rows="3">${esc(d.description || '')}</textarea></label>
       <label class="full">Ссылка кнопки (URL или якорь #)<input name="d_link" value="${esc(d.link || '#')}"></label>
     </div>`;
   }
-  return `<div class="block-fields">${Object.keys(d).filter(k => typeof d[k] === 'string' || typeof d[k] === 'number').map(k => `<label>${esc(k)}<input name="d_${esc(k)}" value="${esc(v(k))}"></label>`).join('')}</div>`;
+  return `<div class="block-fields">${Object.keys(d).filter(k => typeof d[k] === 'string' || typeof d[k] === 'number').map(k => `<label>${esc(k)}<input name="d_${esc(k)}" value="${esc(d[k])}"></label>`).join('')}</div>`;
 }
 
-function collectionHtml(type, title, lang = 'ru') {
+function collectionHtml(type, title) {
   const arr = db[type];
   return `<section id="${type}" class="panel">
     <div class="panel-head">
       <div>
-        <div class="eyebrow">CONTENT ${lang !== 'ru' ? `(${lang.toUpperCase()})` : ''}</div>
+        <div class="eyebrow">CONTENT</div>
         <h2>${esc(title)} (${arr.length})</h2>
       </div>
     </div>
-    <div class="collection-grid">${arr.map(x => {
-      const tr = x.translations?.[lang] || {};
-      const v = (key) => lang === 'ru' ? (x[key] || '') : (tr[key] || '');
-      const r = (key) => x[key] || '';
-
-      return `
+    <div class="collection-grid">${arr.map(x => `
       <form method="post" action="/admin/${type}/save" class="item-card">
         <input type="hidden" name="id" value="${x.id}">
-        <input type="hidden" name="_lang" value="${lang}">
         <div class="item-top">
           <div style="display:flex;align-items:center;gap:6px">
             <b>#${x.id}</b>
-            <button type="submit" formaction="/admin/${type}/${x.id}/up?lang=${lang}" class="btn-arrow" title="Поднять выше">▲</button>
-            <button type="submit" formaction="/admin/${type}/${x.id}/down?lang=${lang}" class="btn-arrow" title="Опустить ниже">▼</button>
+            <button type="submit" formaction="/admin/${type}/${x.id}/up" class="btn-arrow" title="Поднять выше">▲</button>
+            <button type="submit" formaction="/admin/${type}/${x.id}/down" class="btn-arrow" title="Опустить ниже">▼</button>
           </div>
           <button type="submit">Сохранить</button>
         </div>
-        ${fieldMap[type].map(f => {
-          const isShared = ['image', 'x', 'y', 'link'].includes(f[0]);
-          const currentVal = isShared ? (x[f[0]] || '') : v(f[0]);
-          const ruVal = r(f[0]);
-          return fieldHtml(f[0], f[1], currentVal, ruVal, isShared ? 'ru' : lang);
-        }).join('')}
+        ${fieldMap[type].map(f => fieldHtml(f[0], f[1], x[f[0]])).join('')}
         <div class="item-bottom">
           <label class="switch"><input type="checkbox" name="enabled" value="1" ${x.enabled ? 'checked' : ''}> Показывать</label>
-          <button formaction="/admin/${type}/${x.id}/delete?lang=${lang}" formmethod="post" class="danger" onclick="return confirm('Удалить?')">Удалить</button>
+          <button formaction="/admin/${type}/${x.id}/delete" formmethod="post" class="danger" onclick="return confirm('Удалить?')">Удалить</button>
         </div>
-      </form>`;
-    }).join('')}
+      </form>`).join('')}
     </div>
     <div class="new-item">
       <h3>+ Добавить ${esc(title.toLowerCase().replace(/ия$/, 'ие').replace(/ы$/, ''))}</h3>
       <form method="post" action="/admin/${type}/save" class="grid-form">
-        <input type="hidden" name="_lang" value="ru">
-        ${fieldMap[type].map(f => fieldHtml(f[0], f[1], '', '', 'ru')).join('')}
+        ${fieldMap[type].map(f => fieldHtml(f[0], f[1], '')).join('')}
         <label class="switch"><input type="checkbox" name="enabled" value="1" checked> Показывать</label>
         <div><button>+ Добавить</button></div>
       </form>
@@ -860,7 +622,7 @@ function collectionHtml(type, title, lang = 'ru') {
   </section>`;
 }
 
-function adminPage(msg = '', lang = 'ru') {
+function adminPage(msg = '') {
   const logosBlock = db.blocks.find(x => x.type === 'logos');
   const logosList = logosBlock?.data?.logos || [];
 
@@ -884,29 +646,14 @@ function adminPage(msg = '', lang = 'ru') {
   </aside>
   <main class="admin-main">
     ${msg ? `<div class="notice">${esc(msg)}</div>` : ''}
-
-    <div class="admin-lang-bar">
-      <div>
-        <div class="eyebrow">МНОГОЯЗЫЧНОСТЬ</div>
-        <strong style="font-size:15px">Язык для редактирования контента:</strong>
-        <span class="admin-lang-hint">Выберите язык, чтобы редактировать или дополнять переводы. Если поле не заполнено, сайт покажет текст на русском.</span>
-      </div>
-      <div class="admin-lang-tabs">
-        <a href="/admin?lang=ru" class="admin-lang-tab ${lang === 'ru' ? 'active' : ''}">🇷🇺 Русский (RU)</a>
-        <a href="/admin?lang=uz" class="admin-lang-tab ${lang === 'uz' ? 'active' : ''}">🇺🇿 O'zbekcha (UZ)</a>
-        <a href="/admin?lang=en" class="admin-lang-tab ${lang === 'en' ? 'active' : ''}">🇬🇧 English (EN)</a>
-      </div>
-    </div>
-
     <section id="page" class="panel">
       <div class="panel-head">
         <div>
-          <div class="eyebrow">PAGE BUILDER · ${lang.toUpperCase()}</div>
+          <div class="eyebrow">PAGE BUILDER</div>
           <h1>Структура страницы</h1>
-          <p>Редактируйте содержание блоков на выбранном языке (сейчас: <strong>${lang.toUpperCase()}</strong>). При пустом переводе в полях подсказывается русский оригинал.</p>
+          <p>Управляйте каждым элементом каждого блока. Перетаскивайте мышкой (☷) или перемещайте кнопками (▲/▼). Каждый блок можно детально редактировать, включать или выключать.</p>
         </div>
         <form method="post" action="/admin/blocks/add" class="add-form">
-          <input type="hidden" name="_lang" value="${lang}">
           <select name="type">
             <option value="hero">Главный экран (Hero)</option>
             <option value="logos">Логотипы брендов (Logos)</option>
@@ -936,17 +683,16 @@ function adminPage(msg = '', lang = 'ru') {
                 <span class="status ${b.enabled ? 'on' : 'off'}">${b.enabled ? 'ВКЛ' : 'ВЫКЛ'}</span>
               </div>
               <div class="block-quick-actions" onclick="event.stopPropagation()">
-                <form method="post" action="/admin/blocks/${b.id}/up?lang=${lang}" style="display:inline">
+                <form method="post" action="/admin/blocks/${b.id}/up" style="display:inline">
                   <button type="submit" class="btn-arrow" title="Поднять выше">▲</button>
                 </form>
-                <form method="post" action="/admin/blocks/${b.id}/down?lang=${lang}" style="display:inline">
+                <form method="post" action="/admin/blocks/${b.id}/down" style="display:inline">
                   <button type="submit" class="btn-arrow" title="Опустить ниже">▼</button>
                 </form>
               </div>
             </summary>
             <div class="block-body">
               <form method="post" action="/admin/blocks/${b.id}/save" class="editor">
-                <input type="hidden" name="_lang" value="${lang}">
                 <div class="block-meta-row">
                   <label class="block-title-label">
                     <span>Название блока в админ-панели</span>
@@ -957,15 +703,15 @@ function adminPage(msg = '', lang = 'ru') {
                     <span>Показывать на сайте</span>
                   </label>
                 </div>
-                ${blockFieldsHtml(b, lang)}
+                ${blockFieldsHtml(b)}
                 <details class="advanced-raw">
                   <summary>Продвинутый режим (Raw JSON)</summary>
                   <textarea name="raw_json" rows="6">${esc(JSON.stringify(b.data, null, 2))}</textarea>
                   <small>Отредактируйте JSON только если хотите вручную изменить специфическую структуру данных.</small>
                 </details>
                 <div class="editor-buttons">
-                  <button type="submit" class="button">💾 Сохранить изменения блока (${lang.toUpperCase()})</button>
-                  <button formaction="/admin/blocks/${b.id}/delete?lang=${lang}" formmethod="post" class="danger" onclick="return confirm('Удалить этот блок?')">🗑 Удалить блок</button>
+                  <button type="submit" class="button">💾 Сохранить изменения блока</button>
+                  <button formaction="/admin/blocks/${b.id}/delete" formmethod="post" class="danger" onclick="return confirm('Удалить этот блок?')">🗑 Удалить блок</button>
                 </div>
               </form>
             </div>
@@ -977,19 +723,18 @@ function adminPage(msg = '', lang = 'ru') {
     <section id="settings" class="panel">
       <div class="panel-head">
         <div>
-          <div class="eyebrow">GLOBAL STYLE · ${lang.toUpperCase()}</div>
+          <div class="eyebrow">GLOBAL STYLE</div>
           <h2>Настройки сайта</h2>
         </div>
       </div>
       <form method="post" action="/admin/settings" class="grid-form">
-        <input type="hidden" name="_lang" value="${lang}">
         <label class="wide">Логотип в левом верхнем углу
-          ${fieldHtml('siteLogo', 'Файл логотипа', db.settings.siteLogo || '', '', 'ru')}
+          ${fieldHtml('siteLogo', 'Файл логотипа', db.settings.siteLogo || '')}
         </label>
         <label>Alt логотипа<input name="siteLogoAlt" value="${esc(db.settings.siteLogoAlt || db.settings.siteTitle)}"></label>
         <label>Ширина логотипа, px<input type="number" name="siteLogoWidth" min="70" max="280" value="${Number(db.settings.siteLogoWidth) || 150}"></label>
-        <label>Название сайта (${lang.toUpperCase()})<input name="siteTitle" value="${esc(t(db.settings, 'siteTitle', lang))}" placeholder="RU: ${esc(db.settings.siteTitle || '')}"></label>
-        <label>Даты проведения (${lang.toUpperCase()})<input name="siteDates" value="${esc(t(db.settings, 'siteDates', lang))}" placeholder="RU: ${esc(db.settings.siteDates || '')}"></label>
+        <label>Название сайта<input name="siteTitle" value="${esc(db.settings.siteTitle)}"></label>
+        <label>Даты проведения<input name="siteDates" value="${esc(db.settings.siteDates)}"></label>
         <label>Основной цвет
           <div style="display:flex;gap:6px">
             <input type="color" value="${esc(db.settings.primary || '#111111')}" oninput="this.nextElementSibling.value=this.value" style="width:42px;height:38px;padding:2px;cursor:pointer">
@@ -1024,36 +769,35 @@ function adminPage(msg = '', lang = 'ru') {
             ${['Arial, Helvetica, sans-serif', 'Inter, Arial, sans-serif', 'Helvetica, Arial, sans-serif', 'Georgia, serif', 'Times New Roman, serif'].map(f => `<option ${db.settings.displayFont === f ? 'selected' : ''}>${esc(f)}</option>`).join('')}
           </select>
         </label>
-        <div><button>Сохранить настройки стиля (${lang.toUpperCase()})</button></div>
+        <div><button>Сохранить настройки стиля</button></div>
       </form>
     </section>
 
     <section id="nav" class="panel">
       <div class="panel-head">
         <div>
-          <div class="eyebrow">NAVIGATION · ${lang.toUpperCase()}</div>
+          <div class="eyebrow">NAVIGATION</div>
           <h2>Меню шапки (${(db.settings.nav || []).length})</h2>
-          <p>Ссылки в верхнем меню сайта. Редактируйте названия пунктов для выбранного языка.</p>
+          <p>Ссылки в верхнем меню сайта (якоря #program или внешние ссылки). Пункты можно переименовывать, отключать, перемещать и дополнять.</p>
         </div>
       </div>
       <div class="nav-grid">
         ${(db.settings.nav || []).map(n => `
           <form method="post" action="/admin/nav/save" class="nav-card">
             <input type="hidden" name="id" value="${n.id}">
-            <input type="hidden" name="_lang" value="${lang}">
             <div class="item-top">
               <div style="display:flex;align-items:center;gap:6px">
                 <b>#${n.id}</b>
-                <button type="submit" formaction="/admin/nav/${n.id}/up?lang=${lang}" class="btn-arrow" title="Поднять выше">▲</button>
-                <button type="submit" formaction="/admin/nav/${n.id}/down?lang=${lang}" class="btn-arrow" title="Опустить ниже">▼</button>
+                <button type="submit" formaction="/admin/nav/${n.id}/up" class="btn-arrow" title="Поднять выше">▲</button>
+                <button type="submit" formaction="/admin/nav/${n.id}/down" class="btn-arrow" title="Опустить ниже">▼</button>
               </div>
               <button type="submit">Сохранить</button>
             </div>
-            <label>Текст ссылки (${lang.toUpperCase()})<input name="label" value="${esc(t(n, 'label', lang))}" placeholder="RU: ${esc(n.label)}"></label>
+            <label>Текст ссылки<input name="label" value="${esc(n.label)}"></label>
             <label>URL / Якорь<input name="url" value="${esc(n.url)}"></label>
             <div class="item-bottom">
               <label class="switch"><input type="checkbox" name="enabled" value="1" ${n.enabled !== false ? 'checked' : ''}> Показывать</label>
-              <button type="submit" formaction="/admin/nav/${n.id}/delete?lang=${lang}" formmethod="post" class="danger" onclick="return confirm('Удалить пункт меню?')">Удалить</button>
+              <button type="submit" formaction="/admin/nav/${n.id}/delete" formmethod="post" class="danger" onclick="return confirm('Удалить пункт меню?')">Удалить</button>
             </div>
           </form>
         `).join('')}
@@ -1061,7 +805,6 @@ function adminPage(msg = '', lang = 'ru') {
       <div class="new-item">
         <h3>+ Добавить новый пункт меню</h3>
         <form method="post" action="/admin/nav/save" class="grid-form">
-          <input type="hidden" name="_lang" value="ru">
           <label>Текст пункта<input name="label" placeholder="Например, О нас" required></label>
           <label>URL / Якорь<input name="url" placeholder="Например, #about или /page" required></label>
           <label class="switch"><input type="checkbox" name="enabled" value="1" checked> Показывать</label>
@@ -1075,27 +818,26 @@ function adminPage(msg = '', lang = 'ru') {
         <div>
           <div class="eyebrow">BRAND ASSETS</div>
           <h2>Логотипы в верхнем блоке (${logosList.length})</h2>
-          <p>Логотипы организаторов, партнёров и медиа.</p>
+          <p>Логотипы организаторов, партнёров и медиа. Можно загрузить изображение с компьютера или указать URL.</p>
         </div>
       </div>
       <div class="collection-grid">
         ${logosList.map(l => `
           <form method="post" action="/admin/logos/save" class="item-card">
             <input type="hidden" name="id" value="${esc(l.id || '')}">
-            <input type="hidden" name="_lang" value="${lang}">
             <div class="item-top">
               <div style="display:flex;align-items:center;gap:6px">
                 <b>${esc(l.name || 'Логотип')}</b>
-                <button type="submit" formaction="/admin/logos/${esc(l.id || '')}/up?lang=${lang}" class="btn-arrow" title="Поднять выше">▲</button>
-                <button type="submit" formaction="/admin/logos/${esc(l.id || '')}/down?lang=${lang}" class="btn-arrow" title="Опустить ниже">▼</button>
+                <button type="submit" formaction="/admin/logos/${esc(l.id || '')}/up" class="btn-arrow" title="Поднять выше">▲</button>
+                <button type="submit" formaction="/admin/logos/${esc(l.id || '')}/down" class="btn-arrow" title="Опустить ниже">▼</button>
               </div>
               <button type="submit">Сохранить</button>
             </div>
             <label>Название бренда<input name="name" value="${esc(l.name || '')}"></label>
-            ${fieldHtml('image', 'Логотип', l.image || '', '', 'ru')}
+            ${fieldHtml('image', 'Логотип', l.image || '')}
             <div class="item-bottom">
               <label class="switch"><input type="checkbox" name="enabled" value="1" ${l.enabled !== false ? 'checked' : ''}> Показывать</label>
-              <button type="submit" formaction="/admin/logos/${esc(l.id || '')}/delete?lang=${lang}" formmethod="post" class="danger" onclick="return confirm('Удалить логотип?')">Удалить</button>
+              <button type="submit" formaction="/admin/logos/${esc(l.id || '')}/delete" formmethod="post" class="danger" onclick="return confirm('Удалить логотип?')">Удалить</button>
             </div>
           </form>
         `).join('')}
@@ -1103,20 +845,19 @@ function adminPage(msg = '', lang = 'ru') {
       <div class="new-item">
         <h3>+ Добавить новый логотип</h3>
         <form method="post" action="/admin/logos/save" class="grid-form">
-          <input type="hidden" name="_lang" value="ru">
           <label>Название бренда<input name="name" placeholder="Например, GROHE" required></label>
-          ${fieldHtml('image', 'Логотип', '', '', 'ru')}
+          ${fieldHtml('image', 'Логотип', '')}
           <label class="switch"><input type="checkbox" name="enabled" value="1" checked> Показывать</label>
           <div><button>+ Добавить логотип</button></div>
         </form>
       </div>
     </section>
 
-    ${collectionHtml('events', 'Мероприятия', lang)}
-    ${collectionHtml('speakers', 'Спикеры', lang)}
-    ${collectionHtml('projects', 'Специальные проекты', lang)}
-    ${collectionHtml('activations', 'City Activations', lang)}
-    ${collectionHtml('locations', 'Локации карты', lang)}
+    ${collectionHtml('events', 'Мероприятия')}
+    ${collectionHtml('speakers', 'Спикеры')}
+    ${collectionHtml('projects', 'Специальные проекты')}
+    ${collectionHtml('activations', 'City Activations')}
+    ${collectionHtml('locations', 'Локации карты')}
 
     <section id="registrations" class="panel">
       <div class="panel-head">
@@ -1144,7 +885,7 @@ function adminPage(msg = '', lang = 'ru') {
                 <td>${esc(r.interest)}</td>
                 <td>${esc(r.created_at)}</td>
                 <td>
-                  <form method="post" action="/admin/registrations/${r.id}/delete?lang=${lang}" onsubmit="return confirm('Удалить эту регистрацию?')">
+                  <form method="post" action="/admin/registrations/${r.id}/delete" onsubmit="return confirm('Удалить эту регистрацию?')">
                     <button class="danger" style="margin:0;padding:4px 8px;font-size:11px">Удалить</button>
                   </form>
                 </td>
@@ -1160,28 +901,18 @@ function adminPage(msg = '', lang = 'ru') {
 </body></html>`;
 }
 
-function success(ok, msg, lang = 'ru') {
-  const loc = i18n[lang] || i18n.ru;
+function success(ok, msg) {
   return layout(
-    ok ? loc.successTitle : loc.errorTitle,
-    `<div class="success-page"><div class="success-card"><div class="eyebrow">TASHKENT DESIGN WEEK</div><h1>${ok ? esc(loc.successTitle) : esc(loc.errorTitle)}</h1><p>${esc(msg)}</p><a class="button" href="/?lang=${esc(lang)}">${esc(loc.backHome)}</a></div></div>`,
-    '',
-    lang
+    'Регистрация',
+    `<div class="success-page"><div class="success-card"><div class="eyebrow">TASHKENT DESIGN WEEK</div><h1>${ok ? 'Спасибо!' : 'Не удалось отправить форму'}</h1><p>${esc(msg)}</p><a class="button" href="/">Вернуться на сайт</a></div></div>`
   );
 }
 
 async function handle(req, res) {
   const parsedUrl = url.parse(req.url, true);
   const p = parsedUrl.pathname;
-  const queryLang = parsedUrl.query?.lang;
 
-  if (['ru', 'uz', 'en'].includes(queryLang)) {
-    res.setHeader('Set-Cookie', `tdw_lang=${queryLang}; Path=/; Max-Age=31536000; SameSite=Lax`);
-  }
-
-  const lang = getLang(req, parsedUrl);
-
-  if (req.method === 'GET' && p === '/') return send(res, 200, publicPage(lang));
+  if (req.method === 'GET' && p === '/') return send(res, 200, publicPage());
   if (req.method === 'GET' && p === '/admin/login') return send(res, 200, adminLogin());
 
   if (req.method === 'POST' && p === '/admin/login') {
@@ -1196,7 +927,7 @@ async function handle(req, res) {
   }
 
   if (p.startsWith('/admin') && !isAuth(req)) return auth(req, res);
-  if (req.method === 'GET' && p === '/admin') return send(res, 200, adminPage(parsedUrl.query?.message || '', lang));
+  if (req.method === 'GET' && p === '/admin') return send(res, 200, adminPage(parsedUrl.query?.message || ''));
 
   if (req.method === 'POST' && p === '/admin/logout') {
     sessions.delete(cookies(req).tdw_session);
@@ -1206,58 +937,41 @@ async function handle(req, res) {
 
   if (req.method === 'POST' && p === '/register') {
     const b = await body(req);
-    const loc = i18n[lang] || i18n.ru;
     if (!b.first_name || !b.phone || !b.email || b.consent !== '1') {
-      return send(res, 400, success(false, loc.errorMsg, lang));
+      return send(res, 400, success(false, 'Пожалуйста, заполните обязательные поля и подтвердите согласие.'));
     }
-    db.registrations.unshift({ id: nextId(db.registrations), ...b, lang, created_at: new Date().toISOString() });
+    db.registrations.unshift({ id: nextId(db.registrations), ...b, created_at: new Date().toISOString() });
     save();
-    return send(res, 200, success(true, loc.successMsg, lang));
+    return send(res, 200, success(true, 'Спасибо за регистрацию! Мы получили вашу заявку.'));
   }
 
   if (req.method === 'POST' && p === '/admin/settings') {
     const b = await body(req);
-    const editLang = b._lang || 'ru';
-    if (editLang === 'ru') {
-      ['siteTitle', 'siteLogo', 'siteLogoAlt', 'siteLogoWidth', 'siteDates', 'primary', 'accent', 'background', 'text', 'font', 'displayFont'].forEach(k => {
-        if (b[k] != null) db.settings[k] = b[k];
-      });
-      db.settings.siteLogoWidth = Math.max(70, Math.min(280, Number(db.settings.siteLogoWidth) || 150));
-    } else {
-      db.settings.translations = db.settings.translations || {};
-      db.settings.translations[editLang] = db.settings.translations[editLang] || {};
-      ['siteTitle', 'siteDates'].forEach(k => {
-        if (b[k] != null) db.settings.translations[editLang][k] = b[k];
-      });
-    }
+    ['siteTitle', 'siteLogo', 'siteLogoAlt', 'siteLogoWidth', 'siteDates', 'primary', 'accent', 'background', 'text', 'font', 'displayFont'].forEach(k => {
+      if (b[k] != null) db.settings[k] = b[k];
+    });
+    db.settings.siteLogoWidth = Math.max(70, Math.min(280, Number(db.settings.siteLogoWidth) || 150));
     save();
-    return redirect(res, `/admin?lang=${editLang}&message=Настройки сохранены#settings`);
+    return redirect(res, '/admin?message=Настройки сохранены#settings');
   }
 
   if (req.method === 'POST' && p === '/admin/nav/save') {
     const b = await body(req);
-    const editLang = b._lang || 'ru';
     db.settings.nav = db.settings.nav || [];
     const id = Number(b.id || 0);
     if (id) {
       const item = db.settings.nav.find(x => x.id === id);
       if (item) {
-        if (editLang === 'ru') {
-          item.label = b.label || item.label;
-          item.url = b.url || item.url;
-          item.enabled = b.enabled === '1';
-        } else {
-          item.translations = item.translations || {};
-          item.translations[editLang] = item.translations[editLang] || {};
-          item.translations[editLang].label = b.label || item.translations[editLang].label;
-        }
+        item.label = b.label || item.label;
+        item.url = b.url || item.url;
+        item.enabled = b.enabled === '1';
       }
     } else if (b.label) {
       const next = nextId(db.settings.nav);
       db.settings.nav.push({ id: next, label: b.label, url: b.url || '#', enabled: b.enabled === '1' });
     }
     save();
-    return redirect(res, `/admin?lang=${editLang}&message=Меню шапки обновлено#nav`);
+    return redirect(res, '/admin?message=Меню шапки обновлено#nav');
   }
 
   const nmMatch = p.match(/^\/admin\/nav\/(\d+)\/(delete|up|down)$/);
@@ -1275,7 +989,7 @@ async function handle(req, res) {
       }
       save();
     }
-    return redirect(res, `/admin?lang=${lang}&message=Меню шапки обновлено#nav`);
+    return redirect(res, '/admin?message=Меню шапки обновлено#nav');
   }
 
   if (req.method === 'POST' && p === '/admin/blocks/add') {
@@ -1310,7 +1024,7 @@ async function handle(req, res) {
       data: templates[type] || templates.text
     });
     save();
-    return redirect(res, `/admin?lang=${lang}&message=Блок добавлен#block-${newId}`);
+    return redirect(res, `/admin?message=Блок добавлен#block-${newId}`);
   }
 
   const bm = p.match(/^\/admin\/blocks\/(\d+)\/(save|delete|up|down)$/);
@@ -1323,62 +1037,43 @@ async function handle(req, res) {
     if (act === 'delete') {
       db.blocks.splice(idx, 1);
       save();
-      return redirect(res, `/admin?lang=${lang}&message=Блок удалён#page`);
+      return redirect(res, '/admin?message=Блок удалён#page');
     }
     if (act === 'up') {
       if (idx > 0) {
         const tmp = db.blocks[idx]; db.blocks[idx] = db.blocks[idx - 1]; db.blocks[idx - 1] = tmp; save();
       }
-      return redirect(res, `/admin?lang=${lang}&message=Блок перемещён выше#block-${id}`);
+      return redirect(res, `/admin?message=Блок перемещён выше#block-${id}`);
     }
     if (act === 'down') {
       if (idx < db.blocks.length - 1) {
         const tmp = db.blocks[idx]; db.blocks[idx] = db.blocks[idx + 1]; db.blocks[idx + 1] = tmp; save();
       }
-      return redirect(res, `/admin?lang=${lang}&message=Блок перемещён ниже#block-${id}`);
+      return redirect(res, `/admin?message=Блок перемещён ниже#block-${id}`);
     }
     if (act === 'save') {
       const x = await body(req);
-      const editLang = x._lang || 'ru';
       b.title = x.title || b.title;
-      if (editLang === 'ru') b.enabled = x.enabled === '1';
+      b.enabled = x.enabled === '1';
       b.data = b.data || {};
 
-      if (editLang === 'ru') {
-        if (x.raw_json && x.raw_json.trim()) {
-          try {
-            const parsed = JSON.parse(x.raw_json);
-            Object.assign(b.data, parsed);
-          } catch (e) {}
-        }
-
-        Object.keys(x).filter(k => k.startsWith('d_')).forEach(k => {
-          const key = k.slice(2);
-          let val = x[k];
-          if (key === 'mapHeight') val = Math.max(300, Math.min(1000, Number(val) || 560));
-          b.data[key] = val;
-        });
-
-        if (b.data.html) b.data.html = safeHtml(b.data.html);
-      } else {
-        b.data.translations = b.data.translations || {};
-        b.data.translations[editLang] = b.data.translations[editLang] || {};
-
-        Object.keys(x).filter(k => k.startsWith('d_')).forEach(k => {
-          const key = k.slice(2);
-          let val = x[k];
-          if (key === 'mapHeight') return;
-          if (key === 'image' && !val) return;
-          b.data.translations[editLang][key] = val;
-        });
-
-        if (b.data.translations[editLang].html) {
-          b.data.translations[editLang].html = safeHtml(b.data.translations[editLang].html);
-        }
+      if (x.raw_json && x.raw_json.trim()) {
+        try {
+          const parsed = JSON.parse(x.raw_json);
+          Object.assign(b.data, parsed);
+        } catch (e) {}
       }
 
+      Object.keys(x).filter(k => k.startsWith('d_')).forEach(k => {
+        const key = k.slice(2);
+        let val = x[k];
+        if (key === 'mapHeight') val = Math.max(300, Math.min(1000, Number(val) || 560));
+        b.data[key] = val;
+      });
+
+      if (b.data.html) b.data.html = safeHtml(b.data.html);
       save();
-      return redirect(res, `/admin?lang=${editLang}&message=Блок «${encodeURIComponent(b.title)}» сохранён (${editLang.toUpperCase()})#block-${id}`);
+      return redirect(res, `/admin?message=Блок «${encodeURIComponent(b.title)}» сохранён#block-${id}`);
     }
   }
 
@@ -1391,7 +1086,6 @@ async function handle(req, res) {
 
   if (req.method === 'POST' && p === '/admin/logos/save') {
     const b = await body(req);
-    const editLang = b._lang || 'ru';
     const block = db.blocks.find(x => x.type === 'logos');
     if (!block) return send(res, 404, 'Logos block not found');
     block.data = block.data || {};
@@ -1409,7 +1103,7 @@ async function handle(req, res) {
       block.data.logos.push({ id: next, name: b.name || 'Новый логотип', image: b.image || '', enabled: b.enabled === '1' });
     }
     save();
-    return redirect(res, `/admin?lang=${editLang}&message=Логотип сохранён#logos`);
+    return redirect(res, '/admin?message=Логотип сохранён#logos');
   }
 
   const logoAct = p.match(/^\/admin\/logos\/(\d+)\/(delete|up|down)$/);
@@ -1430,33 +1124,25 @@ async function handle(req, res) {
         save();
       }
     }
-    return redirect(res, `/admin?lang=${lang}&message=Логотип обновлён#logos`);
+    return redirect(res, '/admin?message=Логотип обновлён#logos');
   }
 
   const colSave = p.match(/^\/admin\/(events|speakers|projects|activations|locations)\/save$/);
   if (colSave && req.method === 'POST') {
     const type = colSave[1], b = await body(req), arr = db[type];
     const id = Number(b.id || 0);
-    const editLang = b._lang || 'ru';
-    const fields = Object.fromEntries(Object.keys(b).filter(k => !['id', 'enabled', '_lang'].includes(k)).map(k => [k, b[k]]));
-
+    const fields = Object.fromEntries(Object.keys(b).filter(k => !['id', 'enabled'].includes(k)).map(k => [k, b[k]]));
     if (id) {
       const x = arr.find(z => z.id === id);
       if (x) {
-        if (editLang === 'ru') {
-          Object.assign(x, fields);
-          x.enabled = b.enabled === '1';
-        } else {
-          x.translations = x.translations || {};
-          x.translations[editLang] = x.translations[editLang] || {};
-          Object.assign(x.translations[editLang], fields);
-        }
+        Object.assign(x, fields);
+        x.enabled = b.enabled === '1';
       }
     } else {
       arr.push({ id: nextId(arr), ...fields, enabled: b.enabled === '1' });
     }
     save();
-    return redirect(res, `/admin?lang=${editLang}&message=Сохранено (${editLang.toUpperCase()})#${type}`);
+    return redirect(res, `/admin?message=Сохранено#${type}`);
   }
 
   const colAct = p.match(/^\/admin\/(events|speakers|projects|activations|locations)\/(\d+)\/(delete|up|down)$/);
@@ -1474,18 +1160,18 @@ async function handle(req, res) {
       }
       save();
     }
-    return redirect(res, `/admin?lang=${lang}&message=Обновлено#${type}`);
+    return redirect(res, `/admin?message=Обновлено#${type}`);
   }
 
   const rm = p.match(/^\/admin\/registrations\/(\d+)\/delete$/);
   if (rm && req.method === 'POST') {
     db.registrations = db.registrations.filter(x => x.id !== Number(rm[1]));
     save();
-    return redirect(res, `/admin?lang=${lang}&message=Регистрация удалена#registrations`);
+    return redirect(res, '/admin?message=Регистрация удалена#registrations');
   }
 
   if (req.method === 'GET' && p === '/admin/registrations.csv') {
-    const keys = ['id', 'first_name', 'last_name', 'phone', 'email', 'company', 'role', 'interest', 'lang', 'created_at'];
+    const keys = ['id', 'first_name', 'last_name', 'phone', 'email', 'company', 'role', 'interest', 'created_at'];
     const q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
     const csv = '\uFEFF' + [keys.join(','), ...db.registrations.map(r => keys.map(k => q(r[k])).join(','))].join('\n');
     return send(res, 200, csv, 'text/csv');
