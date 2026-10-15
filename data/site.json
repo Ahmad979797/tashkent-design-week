@@ -1,7 +1,7 @@
 {
   "settings": {
     "siteTitle": "TASHKENT DESIGN WEEK",
-    "siteDates": "24 — 28 СЕНТЯБРЯ 2025",
+    "siteDates": "26 ОКТЯБРЯ — 1 НОЯБРЯ 2026",
     "primary": "#111111",
     "accent": "#f2f0ea",
     "background": "#f7f6f2",
@@ -99,10 +99,10 @@
     ],
     "translations": {
       "uz": {
-        "siteDates": "2025-YIL 24 — 28-SENTABR"
+        "siteDates": "2026-YIL 26-OKTABR — 1-NOYABR"
       },
       "en": {
-        "siteDates": "SEPTEMBER 24 — 28, 2025"
+        "siteDates": "OCTOBER 26 — NOVEMBER 1, 2026"
       }
     }
   },
@@ -116,21 +116,39 @@
         "eyebrow": "Организаторы · Партнёры · Медиа",
         "logos": [
           {
-            "name": "PREMIUM CONCEPT",
-            "image": "/uploads/c7baaaab9737bec34689.jpg",
+            "name": "ACDF",
+            "image": "/uploads/7138d3b3ef1c33467d13.png",
             "id": 1,
             "enabled": true
           },
           {
-            "name": "TASHKENT CITY",
-            "image": "/uploads/ce83dad2a8804777cecc.jpg",
+            "name": "TASHKENT CITY MALL",
+            "image": "/uploads/f471b687b5f406499b92.png",
             "id": 2,
             "enabled": true
           },
           {
-            "name": "GROHE",
-            "image": "",
+            "name": "UFDC",
+            "image": "/uploads/0cb547ab2aa11edb668f.png",
             "id": 3,
+            "enabled": true
+          },
+          {
+            "id": 4,
+            "name": "PREMIUM CONCEPT",
+            "image": "/uploads/d402697c903d8057a93f.png",
+            "enabled": true
+          },
+          {
+            "id": 5,
+            "name": "YANGI TOSHKENT",
+            "image": "/uploads/ef84187eab0acc0cd91f.png",
+            "enabled": true
+          },
+          {
+            "id": 6,
+            "name": "UZBEKISTAN CREATIVE PARK",
+            "image": "/uploads/fb9223a8027b1ec90e71.png",
             "enabled": true
           }
         ],
@@ -151,21 +169,23 @@
       "enabled": true,
       "data": {
         "title": "TASHKENT DESIGN WEEK",
-        "subtitle": "Люди. Пространства. Идеи. Новая культура города.",
-        "dates": "24 — 28 СЕНТЯБРЯ 2025",
-        "image": "",
+        "subtitle": "Ежегодная общегородская платформа, объединяющая архитектуру, дизайн, бизнес, культуру и креативные индустрии.",
+        "dates": "26 ОКТЯБРЯ — 1 НОЯБРЯ 2026",
+        "image": "/uploads/e6f99e060a59d3605dd9.png",
         "button": "Зарегистрироваться",
         "buttonLink": "#registration",
         "translations": {
           "uz": {
-            "subtitle": "Odamlar. Makonlar. G‘oyalar. Yangi shahar madaniyati.",
-            "dates": "2025-YIL 24 — 28-SENTABR",
-            "button": "Ro‘yxatdan o‘tish"
+            "subtitle": "Arxitektura, dizayn, biznes, madaniyat va ijodiy sohalarni birlashtiruvchi har yilgi umumshahar platformasi.",
+            "dates": "2026-YIL 26-OKTABR — 1-NOYABR",
+            "button": "Ro‘yxatdan o‘tish",
+            "title": ""
           },
           "en": {
-            "subtitle": "People. Spaces. Ideas. New Urban Culture.",
-            "dates": "SEPTEMBER 24 — 28, 2025",
-            "button": "Register"
+            "subtitle": "An annual city-wide platform bringing together architecture, design, business, culture and the creative industries.",
+            "dates": "OCTOBER 26 — NOVEMBER 1, 2026",
+            "button": "Register",
+            "title": ""
           }
         }
       }
@@ -177,20 +197,21 @@
       "enabled": true,
       "data": {
         "title": "ПРОГРАММА НЕДЕЛИ ДИЗАЙНА",
-        "html": "<p>Лекции, выставки, дискуссии, городские проекты и специальные мероприятия на ключевых площадках Ташкента.</p><p><strong>Пять дней, десятки событий и одна общая тема — как дизайн меняет город.</strong></p>",
+        "html": "<p>Лекции, выставки, дискуссии, городские проекты и специальные мероприятия на ключевых площадках Ташкента.</p><p><strong>Семь дней, десятки событий и одна общая тема — как дизайн меняет город.</strong></p>",
         "linkText": "Смотреть полную программу →",
         "translations": {
           "uz": {
             "title": "DIZAYN HAFTALIGI DASTURI",
-            "html": "<p>Toshkentning asosiy maydonlarida ma‘ruzalar, ko‘rgazmalar, munozaralar, shahar loyihalari va maxsus tadbirlar.</p><p><strong>Besh kun, o‘nlab tadbirlar va bitta umumiy mavzu — dizayn shaharni qanday o‘zgartiradi.</strong></p>",
+            "html": "<p>Toshkentning asosiy maydonlarida ma‘ruzalar, ko‘rgazmalar, munozaralar, shahar loyihalari va maxsus tadbirlar.</p><p><strong>Yetti kun, o‘nlab tadbirlar va bitta umumiy mavzu — dizayn shaharni qanday o‘zgartiradi.</strong></p>",
             "linkText": "To‘liq dasturni ko‘rish →"
           },
           "en": {
             "title": "DESIGN WEEK PROGRAM",
-            "html": "<p>Lectures, exhibitions, panel discussions, urban projects, and special events across key venues in Tashkent.</p><p><strong>Five days, dozens of events, and one central theme — how design transforms the city.</strong></p>",
+            "html": "<p>Lectures, exhibitions, panel discussions, urban projects, and special events across key venues in Tashkent.</p><p><strong>Seven days, dozens of events, and one central theme — how design transforms the city.</strong></p>",
             "linkText": "View full schedule →"
           }
-        }
+        },
+        "linkUrl": "#events"
       }
     },
     {
@@ -345,8 +366,8 @@
       "date": "24 СЕНТ",
       "time": "18:00",
       "location": "Tashkent City Mall",
-      "description": "Открывающая лекция о городах, пространстве и новой культуре.",
       "link": "#",
+      "description": "Открывающая лекция о городах, пространстве и новой культуре.",
       "enabled": true,
       "translations": {
         "uz": {
@@ -368,8 +389,8 @@
       "date": "25 СЕНТ",
       "time": "19:00",
       "location": "Центр современного искусства",
-      "description": "Дискуссия дизайнеров, архитекторов и исследователей.",
       "link": "#",
+      "description": "Дискуссия дизайнеров, архитекторов и исследователей.",
       "enabled": true,
       "translations": {
         "uz": {
@@ -393,8 +414,8 @@
       "date": "26 СЕНТ",
       "time": "16:00",
       "location": "Premium Concept Showroom",
-      "description": "Мастер-класс о материалах, технологиях и новых сценариях интерьера.",
       "link": "#",
+      "description": "Мастер-класс о материалах, технологиях и новых сценариях интерьера.",
       "enabled": true,
       "translations": {
         "uz": {
@@ -414,45 +435,117 @@
   ],
   "speakers": [
     {
-      "id": 1,
-      "image": "",
-      "name": "Карим Рашид",
-      "role": "Промышленный дизайнер",
-      "company": "Karim Rashid Inc.",
-      "country": "США",
-      "bio": "Международно известный дизайнер.",
-      "topic": "Дизайн будущего",
-      "link": "#",
+      "id": 9,
+      "image": "/uploads/a84268dbf2181bc90cac.png",
+      "name": "Ширин Франгуль-Брюкнер",
+      "role": "Архитектор павильона Узбекистана на Expo 2025 Osaka",
+      "company": "Генеральный директор ATELIER BRÜCKNER",
+      "country": "Германия",
+      "topic": "",
+      "link": "",
+      "bio": "",
       "enabled": true,
       "translations": {
         "uz": {
-          "name": "Karim Rashid",
-          "role": "Sanoat dizayneri",
-          "company": "Karim Rashid Inc.",
-          "country": "AQSH",
-          "bio": "Xalqaro miqyosda taniqli dizayner.",
-          "topic": "Kelajak dizayni"
+          "name": "Shirin Frangoul-Brückner",
+          "role": "Expo 2025 Osaka ko‘rgazmasidagi O‘zbekiston pavilyoni arxitektori ",
+          "company": "ATELIER BRÜCKNER bosh direktori",
+          "country": "Germaniya"
         },
         "en": {
-          "name": "Karim Rashid",
-          "role": "Industrial Designer",
-          "company": "Karim Rashid Inc.",
-          "country": "USA",
-          "bio": "Internationally acclaimed designer.",
-          "topic": "Design of the Future"
+          "name": "Shirin Frangoul-Brückner",
+          "role": "Architect of the Uzbekistan Pavilion at Expo 2025 Osaka",
+          "company": "CEO of ATELIER BRÜCKNER ",
+          "country": "Germany"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "image": "/uploads/5a81d257c076084061e2.png",
+      "name": "Хакан Джейхан Агджа",
+      "role": "Ведущий дизайнер Нового Ташкента",
+      "company": "Основатель и генеральный директор Cross Works",
+      "country": "Великобритания",
+      "topic": "",
+      "link": "",
+      "bio": "",
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Hakan Ceyhan Agca",
+          "role": "Yangi Toshkent bosh dizayneri",
+          "company": "Cross Works asoschisi va bosh direktori",
+          "country": "Buyuk Britaniya"
+        },
+        "en": {
+          "name": "Hakan Ceyhan Agca",
+          "role": "The lead designer of New Tashkent",
+          "company": "Founder & CEO of Cross Works",
+          "country": "United Kingdom"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "image": "/uploads/62434ed7023b7da65c6f.png",
+      "name": "Темур Ахмедов",
+      "role": "Эксперт по зелёному строительству и устойчивому развитию",
+      "company": "",
+      "country": "Узбекистан",
+      "topic": "",
+      "link": "",
+      "bio": "",
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Temur Ahmedov",
+          "role": "Yashil qurilish va barqaror rivojlanish bo‘yicha ekspert",
+          "country": "O‘zbekiston"
+        },
+        "en": {
+          "name": "Temur Akhmedov",
+          "role": "Green Building and Sustainability Expert ",
+          "country": "Uzbekistan"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "image": "/uploads/59bccf68330ebc54ea57.png",
+      "name": "Саидазим Шарипов",
+      "role": "Урбанист и архитектор",
+      "company": "Советник директора Дирекции «Новый Ташкент»",
+      "country": "Узбекистан",
+      "topic": "",
+      "link": "",
+      "bio": "",
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Saidazim Sharipov",
+          "role": "Shaharsoz va arxitektor",
+          "company": "“Yangi Toshkent” direksiyasi direktori maslahatchisi",
+          "country": "O‘zbekiston"
+        },
+        "en": {
+          "name": "Saidazim Sharipov",
+          "role": "Urban planner and Architect",
+          "company": "Adviser to the Director of the New Tashkent Directorate",
+          "country": "Uzbekistan"
         }
       }
     },
     {
       "id": 2,
-      "image": "/uploads/maria_sultanova.png",
+      "image": "/uploads/b05bf1ab304c27062ebc.png",
       "name": "Мария Султанова",
       "role": "Архитектор-урбанист",
       "company": "Директор SAD Studio",
       "country": "Узбекистан",
-      "bio": "Архитектор и исследователь городской среды.",
       "topic": "Город как система",
       "link": "#",
+      "bio": "Архитектор и исследователь городской среды.",
       "enabled": true,
       "translations": {
         "uz": {
@@ -474,105 +567,15 @@
       }
     },
     {
-      "id": 3,
-      "image": "",
-      "name": "Алишер Икрамов",
-      "role": "Основатель студии",
-      "company": "Local Design Studio",
-      "country": "Узбекистан",
-      "bio": "Работает на стыке предметного дизайна и культуры.",
-      "topic": "Новая идентичность",
-      "link": "#",
-      "enabled": true,
-      "translations": {
-        "uz": {
-          "name": "Alisher Ikromov",
-          "role": "Studiya asoschisi",
-          "company": "Local Design Studio",
-          "country": "O‘zbekiston",
-          "bio": "Predmet dizayni va madaniyat tutashuvida faoliyat yuritadi.",
-          "topic": "Yangi o‘zlik"
-        },
-        "en": {
-          "name": "Alisher Ikramov",
-          "role": "Studio Founder",
-          "company": "Local Design Studio",
-          "country": "Uzbekistan",
-          "bio": "Works at the intersection of product design and culture.",
-          "topic": "New Identity"
-        }
-      }
-    },
-    {
-      "id": 4,
-      "image": "",
-      "name": "Сара Ланген",
-      "role": "Куратор и исследователь",
-      "company": "Independent",
-      "country": "Нидерланды",
-      "bio": "Исследует современные дизайн-практики.",
-      "topic": "Кураторство и общество",
-      "link": "#",
-      "enabled": true,
-      "translations": {
-        "uz": {
-          "name": "Sara Langen",
-          "role": "Kurator va tadqiqotchi",
-          "company": "Independent",
-          "country": "Niderlandiya",
-          "bio": "Zamonaviy dizayn amaliyotlarini tadqiq qiladi.",
-          "topic": "Kuratorlik va jamiyat"
-        },
-        "en": {
-          "name": "Sara Langen",
-          "role": "Curator & Researcher",
-          "company": "Independent",
-          "country": "Netherlands",
-          "bio": "Researches contemporary design practices.",
-          "topic": "Curating and Society"
-        }
-      }
-    },
-    {
-      "id": 5,
-      "image": "",
-      "name": "Дэниэл Бек",
-      "role": "Продуктовый директор",
-      "company": "Design Lab",
-      "country": "Германия",
-      "bio": "Развивает инновационные продукты и материалы.",
-      "topic": "Материалы будущего",
-      "link": "#",
-      "enabled": true,
-      "translations": {
-        "uz": {
-          "name": "Deniel Bek",
-          "role": "Mahsulot direktori",
-          "company": "Design Lab",
-          "country": "Germaniya",
-          "bio": "Innovatsion mahsulotlar va materiallarni ishlab chiqadi.",
-          "topic": "Kelajak materiallari"
-        },
-        "en": {
-          "name": "Daniel Beck",
-          "role": "Product Director",
-          "company": "Design Lab",
-          "country": "Germany",
-          "bio": "Develops innovative products and materials.",
-          "topic": "Materials of the Future"
-        }
-      }
-    },
-    {
       "id": 6,
-      "image": "/uploads/shukhrat_abdullaev.png",
+      "image": "/uploads/fe03341f6305ebf41828.png",
       "name": "Шухрат Абдуллаев",
       "role": "Искусствовед",
       "company": "генеральный директор Masdar school",
       "country": "Узбекистан",
-      "bio": "Искусствовед, исследователь и куратор образовательных проектов.",
       "topic": "Культура и искусство",
       "link": "#",
+      "bio": "Искусствовед, исследователь и куратор образовательных проектов.",
       "enabled": true,
       "translations": {
         "uz": {
@@ -592,6 +595,83 @@
           "topic": "Culture and Art"
         }
       }
+    },
+    {
+      "id": 1,
+      "image": "/uploads/9e840b19de1441b77990.png",
+      "name": "Эльмира Галиева",
+      "role": "Архитектор, дизайнер",
+      "company": "Руководитель департамента архитектуры и дизайна Central Asian University",
+      "country": "Узбекистан",
+      "topic": "",
+      "link": "#",
+      "bio": "",
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Elmira Galiyeva",
+          "role": "Arxitektor, dizayner",
+          "company": "Central Asian University Arxitektura va dizayn departamenti rahbari",
+          "country": "O‘zbekiston"
+        },
+        "en": {
+          "name": "Galieva Elmira",
+          "role": "Architect, Designer",
+          "company": "Head of the Architecture & Design department at Central Asian University",
+          "country": "Uzbekistan"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "image": "/uploads/90e3482b3d71a9876ccf.png",
+      "name": "Улугбек Холмурадов",
+      "role": "Архитектор, галерист",
+      "company": "Kholmuradov Architects, Masar & HLMRDV Gallery",
+      "country": "Узбекистан",
+      "topic": "",
+      "link": "#",
+      "bio": "",
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Ulugbek Kholmuradov",
+          "role": "Architect, gallerist",
+          "company": "Kholmuradov Architects, Masar & HLMRDV Gallery",
+          "country": "O‘zbekiston"
+        },
+        "en": {
+          "name": "Ulugbek Kholmuradov",
+          "role": "Architect, gallerist",
+          "company": "Kholmuradov Architects, Masar & HLMRDV Gallery",
+          "country": "Uzbekistan"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "image": "/uploads/4c2b0a32e4c803ba20ed.png",
+      "name": "Мирзаёр Эркинов",
+      "role": "Блогер, активист ",
+      "company": "",
+      "country": "Узбекистан",
+      "topic": "",
+      "link": "#",
+      "bio": "",
+      "enabled": true,
+      "translations": {
+        "uz": {
+          "name": "Mirzayor Erkinov",
+          "role": "Bloger, faol",
+          "company": "Independent",
+          "country": "O‘zbekiston"
+        },
+        "en": {
+          "name": "Mirzayor Erkinov",
+          "role": "Blogger, activist",
+          "country": "Uzbekistan"
+        }
+      }
     }
   ],
   "projects": [
@@ -600,10 +680,10 @@
       "image": "",
       "title": "Silk Reimagined",
       "category": "Special project",
-      "description": "Современная интерпретация традиционного узбекского шёлка в инсталляции от международных дизайнеров.",
       "participants": "Design Week artists",
       "location": "Tashkent",
-      "link": "#",
+      "link": "",
+      "description": "Современная интерпретация традиционного узбекского шёлка в инсталляции от международных дизайнеров.",
       "enabled": true,
       "translations": {
         "uz": {
@@ -631,8 +711,8 @@
       "date": "27 СЕНТ",
       "time": "12:00",
       "location": "Центр Ташкента",
+      "link": "",
       "description": "Серия арт-объектов и инсталляций в ключевых точках города.",
-      "link": "#",
       "enabled": true,
       "translations": {
         "uz": {
@@ -655,127 +735,277 @@
   "locations": [
     {
       "id": 1,
-      "name": "Tashkent City Mall",
-      "address": "Ташкент",
+      "name": "EKO HALI",
+      "address": "Ул. Шота Руставели, 136/1",
       "type": "Выставка",
-      "description": "Открытие недели",
-      "x": 22,
-      "y": 31,
+      "x": "50",
+      "y": "50",
       "link": "#",
+      "description": "Открытие недели",
       "enabled": true,
       "translations": {
         "uz": {
           "name": "Tashkent City Mall",
-          "address": "Toshkent",
           "type": "Ko‘rgazma",
+          "address": "Toshkent",
           "description": "Haftalik ochilishi"
         },
         "en": {
           "name": "Tashkent City Mall",
-          "address": "Tashkent",
           "type": "Exhibition",
+          "address": "Tashkent",
           "description": "Opening event"
         }
       }
     },
     {
       "id": 2,
-      "name": "Центр современного искусства",
+      "name": "AUROM by KS LUX",
       "address": "Ташкент",
       "type": "Специальный проект",
-      "description": "Дискуссии и выставки",
-      "x": 42,
-      "y": 45,
+      "x": "42",
+      "y": "45",
       "link": "#",
+      "description": "Дискуссии и выставки",
       "enabled": true,
       "translations": {
         "uz": {
           "name": "Zamonaviy san‘at markazi",
-          "address": "Toshkent",
           "type": "Maxsus loyiha",
+          "address": "Toshkent",
           "description": "Munozaralar va ko‘rgazmalar"
         },
         "en": {
           "name": "Center for Contemporary Art",
-          "address": "Tashkent",
           "type": "Special Project",
+          "address": "Tashkent",
           "description": "Discussions and exhibitions"
         }
       }
     },
     {
       "id": 3,
-      "name": "Premium Concept Showroom",
+      "name": "ERGO",
       "address": "Ул. Шота Руставели, 1",
       "type": "Мероприятие",
-      "description": "Мастер-классы",
-      "x": 57,
-      "y": 57,
+      "x": "57",
+      "y": "57",
       "link": "#",
+      "description": "Мастер-классы",
       "enabled": true,
       "translations": {
         "uz": {
           "name": "Premium Concept Showroom",
-          "address": "Shota Rustaveli ko‘chasi, 1",
           "type": "Tadbir",
+          "address": "Shota Rustaveli ko‘chasi, 1",
           "description": "Master-klasslar"
         },
         "en": {
           "name": "Premium Concept Showroom",
-          "address": "1 Shota Rustaveli St",
           "type": "Event",
+          "address": "1 Shota Rustaveli St",
           "description": "Masterclasses"
         }
       }
     },
     {
       "id": 4,
-      "name": "Парк «Узбекистан»",
+      "name": "CCA",
       "address": "Ташкент",
       "type": "City activation",
-      "description": "Городская активация",
-      "x": 73,
-      "y": 34,
+      "x": "73",
+      "y": "34",
       "link": "#",
+      "description": "Городская активация",
       "enabled": true,
       "translations": {
         "uz": {
           "name": "«O‘zbekiston» bog‘i",
-          "address": "Toshkent",
           "type": "Shahar faolligi",
+          "address": "Toshkent",
           "description": "Shahar faolligi"
         },
         "en": {
           "name": "Uzbekistan Park",
-          "address": "Tashkent",
           "type": "City activation",
+          "address": "Tashkent",
           "description": "City activation"
         }
       }
     },
     {
       "id": 5,
-      "name": "Музей искусств",
+      "name": "GEBERIT",
       "address": "Ташкент",
       "type": "Выставка",
-      "description": "Специальная экспозиция",
-      "x": 33,
-      "y": 70,
+      "x": "33",
+      "y": "70",
       "link": "#",
+      "description": "Специальная экспозиция",
       "enabled": true,
       "translations": {
         "uz": {
           "name": "San‘at muzeyi",
-          "address": "Toshkent",
           "type": "Ko‘rgazma",
+          "address": "Toshkent",
           "description": "Maxsus ekspozitsiya"
         },
         "en": {
           "name": "State Museum of Arts",
-          "address": "Tashkent",
           "type": "Exhibition",
+          "address": "Tashkent",
           "description": "Special exhibition"
         }
+      }
+    },
+    {
+      "id": 6,
+      "name": "KASHLUX",
+      "address": "Ул. Фидокор, 40",
+      "type": "",
+      "x": "50",
+      "y": "50",
+      "link": "",
+      "description": "",
+      "enabled": true,
+      "translations": {
+        "uz": {},
+        "en": {}
+      }
+    },
+    {
+      "id": 7,
+      "name": "ONTOARTE",
+      "address": "",
+      "type": "",
+      "x": "",
+      "y": "",
+      "link": "",
+      "description": "",
+      "enabled": true,
+      "translations": {
+        "uz": {},
+        "en": {}
+      }
+    },
+    {
+      "id": 8,
+      "name": "MATERIA × MODMATE",
+      "address": "",
+      "type": "",
+      "x": "",
+      "y": "",
+      "link": "",
+      "description": "",
+      "enabled": true,
+      "translations": {
+        "uz": {},
+        "en": {}
+      }
+    },
+    {
+      "id": 9,
+      "name": "DECOPRO",
+      "address": "",
+      "type": "",
+      "x": "",
+      "y": "",
+      "link": "",
+      "description": "",
+      "enabled": true,
+      "translations": {
+        "uz": {},
+        "en": {}
+      }
+    },
+    {
+      "id": 10,
+      "name": "GROHE",
+      "address": "",
+      "type": "",
+      "x": "",
+      "y": "",
+      "link": "",
+      "description": "",
+      "enabled": true,
+      "translations": {
+        "uz": {},
+        "en": {}
+      }
+    },
+    {
+      "id": 11,
+      "name": "GROHE",
+      "address": "",
+      "type": "",
+      "x": "",
+      "y": "",
+      "link": "",
+      "description": "",
+      "enabled": true,
+      "translations": {
+        "uz": {},
+        "en": {}
+      }
+    },
+    {
+      "id": 12,
+      "name": "PREMIUM CONCEPT",
+      "address": "",
+      "type": "",
+      "x": "",
+      "y": "",
+      "link": "",
+      "description": "",
+      "enabled": true,
+      "translations": {
+        "uz": {},
+        "en": {}
+      }
+    },
+    {
+      "id": 13,
+      "name": "BWT × EUROPE TRADING",
+      "address": "Малая кольцевая дорога, 26",
+      "type": "",
+      "x": "",
+      "y": "",
+      "link": "",
+      "description": "",
+      "enabled": true,
+      "translations": {
+        "uz": {},
+        "en": {}
+      }
+    },
+    {
+      "id": 14,
+      "name": "KASHLUX",
+      "address": "Обводная ул. Нуравшан, 16 ",
+      "type": "",
+      "x": "",
+      "y": "",
+      "link": "",
+      "description": "",
+      "enabled": true,
+      "translations": {
+        "uz": {},
+        "en": {}
+      }
+    },
+    {
+      "id": 15,
+      "name": "HOFMANN",
+      "address": "Просп. Шарафа Рашидова, 71",
+      "type": "",
+      "x": "",
+      "y": "",
+      "link": "",
+      "description": "",
+      "enabled": true,
+      "translations": {
+        "uz": {},
+        "en": {}
       }
     }
   ],
